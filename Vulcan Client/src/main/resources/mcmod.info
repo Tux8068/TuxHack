@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "tuxhack",
+        "name": "TuxHack",
+        "description": "TuxHack is tuxiscool's funny mod using "vulcan" client as the base.",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "https://discord.gg/sVFN5Bf4N2",
+        "updateUrl": "",
+        "authorList": [Tuxiscool, _KA1],
+        "credits": "Tuxiscool",
+        "logoFile": "assets/minecraft/vulcan.png",
+        "screenshots": [],
+        "dependencies": []
+    }
+]

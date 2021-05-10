@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "me.ka1.vulcan.mixin.mixins",
+  "refmap": "mixins.vulcan.refmap.json",
+  "mixins": [
+    "MixinNetworkManager",
+    "MixinRenderPlayer"
+  ]
+}
