@@ -75,7 +75,6 @@ public class ModuleManager {
         addMod(new Rainbow());
         addMod(new CommandColor());
         addMod(new TeamTux());
-        addMod(new Zormios());
         //Hud
         addMod(new Inventory());
         addMod(new me.ka1.vulcan.module.modules.Hud.ArrayList());
