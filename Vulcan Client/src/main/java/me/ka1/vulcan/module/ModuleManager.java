@@ -59,11 +59,13 @@ public class ModuleManager {
         addMod(new Suicide());
         addMod(new MountBypass());
         addMod(new Xcarry());
+        this.addMod(new Velocity());
         //Misc
         addMod(new RageQuit());
         addMod(new AntiAim());
         addMod(new FakePlayer());
-        //addMod(new FastPlace());
+        addMod(new PacketMine());
+        addMod(new InstantMine());
         addMod(new GhastNotifier());
         addMod(new ArmorNotification());
         //Client

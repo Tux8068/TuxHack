@@ -1,52 +1,51 @@
 package me.ka1.vulcan.util;
 
 public class Timer {
-   // $FF: synthetic field
+   private long time = -1L;
 
-   private long time;
-
-   private long current = System.currentTimeMillis();
-
-   public void reset() {
-      this.current = System.currentTimeMillis();
+   public boolean passedS(double s) {
+      return this.passedMs((long)s * 1000L);
    }
 
-   public boolean hasReached(long var1) {
-      return System.currentTimeMillis() - this.current >= var1;
+   public boolean passedDms(double dms) {
+      return this.passedMs((long)dms * 10L);
    }
 
-   public boolean passed(double ms)
+   public boolean passedDs(double ds) {
+      return this.passedMs((long)ds * 100L);
+   }
+
+   public void resetTimeSkipTo(long p_MS)
    {
-      return System.currentTimeMillis() - this.time >= ms;
+      this.time = System.currentTimeMillis() + p_MS;
    }
 
-   public boolean sleep(long var1) {
-      if (this.time() >= var1) {
-         this.reset();
-         return true;
-      } else {
-         return false;
-      }
+   public boolean passedMs(long ms) {
+      return this.passedNS(this.convertToNS(ms));
    }
 
-   public long getTimePassed() {
-      return System.currentTimeMillis() - this.current;
+   public void setMs(long ms) {
+      this.time = System.nanoTime() - this.convertToNS(ms);
    }
 
-   public void setTime(long time)
-   {
-      this.time = time;
+   public boolean passedNS(long ns) {
+      return System.nanoTime() - this.time >= ns;
    }
 
-   public long time() {
-      return System.currentTimeMillis() - this.current;
+   public long getPassedTimeMs() {
+      return this.getMs(System.nanoTime() - this.time);
    }
 
-   public boolean hasReached(long var1, boolean var3) {
-      if (var3) {
-         this.reset();
-      }
+   public Timer reset() {
+      this.time = System.nanoTime();
+      return this;
+   }
 
-      return System.currentTimeMillis() - this.current >= var1;
+   public long getMs(long time) {
+      return time / 1000000L;
+   }
+
+   public long convertToNS(long time) {
+      return time * 1000000L;
    }
 }

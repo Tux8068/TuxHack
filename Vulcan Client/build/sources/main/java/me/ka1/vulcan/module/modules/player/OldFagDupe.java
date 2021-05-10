@@ -7,6 +7,7 @@ import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockChest;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.AbstractChestHorse;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
@@ -23,11 +24,51 @@ public class OldFagDupe extends Module {
 
     Entity donkey;
 
-    public int onUpdate() {
+    @Override
+    protected void onEnable() {
+
+        if(findAirInHotbar()==-1){
+            this.disable();
+            return;
+        }
+
+        if(findChestInHotbar()==-1){
+            this.disable();
+            return;
+        }
+
         donkey = mc.world.loadedEntityList.stream()
                 .filter(this::isValidEntity)
                 .min(Comparator.comparing(p_Entity -> mc.player.getDistance(p_Entity)))
                 .orElse(null);
+
+        if(donkey == null){
+            this.disable();
+            return;
+        }
+
+    }
+
+    public int onUpdate() {
+
+        if(findAirInHotbar()==-1){
+            this.disable();
+            return 0;
+        }
+
+        if(findChestInHotbar()==-1){
+            this.disable();
+            return 0;
+        }
+
+        donkey = mc.world.loadedEntityList.stream()
+                .filter(this::isValidEntity)
+                .min(Comparator.comparing(p_Entity -> mc.player.getDistance(p_Entity)))
+                .orElse(null);
+        if(donkey == null){
+            this.disable();
+            return 0;
+        }
 
         putChestOn();
         Command.sendRawMessage("Chest on donk");
@@ -65,23 +106,21 @@ public class OldFagDupe extends Module {
     }
 
     private int findAirInHotbar() {
-
-        // search blocks in hotbar
         int slot = -1;
         for (int i = 0; i < 9; i++) {
-
-            // filter out non-block items
             ItemStack stack = mc.player.inventory.getStackInSlot(i);
 
-            if (stack == ItemStack.EMPTY || !(stack.getItem() instanceof ItemBlock)) {
-                continue;
+            if(stack.getItem() == Items.AIR){
+                slot = i;
             }
 
+            /*
             Block block = ((ItemBlock) stack.getItem()).getBlock();
             if (block instanceof BlockAir) {
                 slot = i;
                 break;
             }
+             */
         }
         return slot;
     }
