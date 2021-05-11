@@ -6,6 +6,12 @@
     "me/ka1/vulcan/mixin/mixins/MixinNetworkManager": {
       "sendPacket(Lnet/minecraft/network/Packet;)V": "Lnet/minecraft/network/NetworkManager;func_179290_a(Lnet/minecraft/network/Packet;)V",
       "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
+    },
+    "me/ka1/vulcan/mixin/mixins/MixinBow": {
+      "onPlayerStoppedUsing": "Lnet/minecraft/item/ItemBow;func_77615_a(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;I)V"
+    },
+    "me/ka1/vulcan/mixin/mixins/MixinPlayerControllerMP": {
+      "onPlayerDamageBlock": "Lnet/minecraft/client/multiplayer/PlayerControllerMP;func_180512_c(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"
     }
   },
   "data": {
@@ -16,6 +22,12 @@
       "me/ka1/vulcan/mixin/mixins/MixinNetworkManager": {
         "sendPacket(Lnet/minecraft/network/Packet;)V": "Lgw;a(Lht;)V",
         "channelRead0": "Lgw;a(Lio/netty/channel/ChannelHandlerContext;Lht;)V"
+      },
+      "me/ka1/vulcan/mixin/mixins/MixinBow": {
+        "onPlayerStoppedUsing": "Lahg;a(Laip;Lamu;Lvp;I)V"
+      },
+      "me/ka1/vulcan/mixin/mixins/MixinPlayerControllerMP": {
+        "onPlayerDamageBlock": "Lbsa;b(Let;Lfa;)Z"
       }
     },
     "searge": {
@@ -25,6 +37,12 @@
       "me/ka1/vulcan/mixin/mixins/MixinNetworkManager": {
         "sendPacket(Lnet/minecraft/network/Packet;)V": "Lnet/minecraft/network/NetworkManager;func_179290_a(Lnet/minecraft/network/Packet;)V",
         "channelRead0": "Lnet/minecraft/network/NetworkManager;channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/Packet;)V"
+      },
+      "me/ka1/vulcan/mixin/mixins/MixinBow": {
+        "onPlayerStoppedUsing": "Lnet/minecraft/item/ItemBow;func_77615_a(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;I)V"
+      },
+      "me/ka1/vulcan/mixin/mixins/MixinPlayerControllerMP": {
+        "onPlayerDamageBlock": "Lnet/minecraft/client/multiplayer/PlayerControllerMP;func_180512_c(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)Z"
       }
     }
   }

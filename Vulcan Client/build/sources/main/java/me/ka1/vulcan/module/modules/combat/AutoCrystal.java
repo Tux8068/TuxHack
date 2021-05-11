@@ -64,6 +64,7 @@ public class AutoCrystal extends Module {
     private int waitCounter;
     EnumFacing f;
     private static boolean togglePitch = false;
+    public static boolean stopAC = false;
 
 
     Setting.Boolean explode;

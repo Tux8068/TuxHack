@@ -13,10 +13,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(NetworkManager.class)
 public class MixinNetworkManager {
 
+    //What fucking retard wrote this piece of shit
+    //There we go
+
     @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("HEAD"), cancellable = true)
     private void preSendPacket(Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent.Send event = new PacketEvent.Send(packet);
-        Vulcan.EVENT_BUS.post(event);
+        Vulcan.getInstance().getEventManager().post(event);
 
         if (event.isCancelled()) {
             callbackInfo.cancel();
@@ -26,7 +29,7 @@ public class MixinNetworkManager {
     @Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
     private void preChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent.Receive event = new PacketEvent.Receive(packet);
-        Vulcan.EVENT_BUS.post(event);
+        Vulcan.getInstance().getEventManager().post(event);
 
         if (event.isCancelled()) {
             callbackInfo.cancel();
@@ -36,7 +39,7 @@ public class MixinNetworkManager {
     @Inject(method = "sendPacket(Lnet/minecraft/network/Packet;)V", at = @At("TAIL"), cancellable = true)
     private void postSendPacket(Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent.PostSend event = new PacketEvent.PostSend(packet);
-        Vulcan.EVENT_BUS.post(event);
+        Vulcan.getInstance().getEventManager().post(event);
 
         if (event.isCancelled()) {
             callbackInfo.cancel();
@@ -46,7 +49,7 @@ public class MixinNetworkManager {
     @Inject(method = "channelRead0", at = @At("TAIL"), cancellable = true)
     private void postChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callbackInfo) {
         PacketEvent.PostReceive event = new PacketEvent.PostReceive(packet);
-        Vulcan.EVENT_BUS.post(event);
+        Vulcan.getInstance().getEventManager().post(event);
 
         if (event.isCancelled()) {
             callbackInfo.cancel();

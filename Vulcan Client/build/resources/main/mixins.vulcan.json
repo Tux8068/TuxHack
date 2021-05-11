@@ -5,6 +5,8 @@
   "refmap": "mixins.vulcan.refmap.json",
   "mixins": [
     "MixinNetworkManager",
-    "MixinRenderPlayer"
+    "MixinRenderPlayer",
+    "MixinPlayerControllerMP",
+    "MixinBow"
   ]
 }

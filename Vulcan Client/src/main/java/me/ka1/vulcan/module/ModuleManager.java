@@ -47,6 +47,7 @@ public class ModuleManager {
         addMod(new Surround());
         addMod(new spiderman());
         addMod(new ExpFast());
+        addMod(new PistonCrystal());
         //Movement
         addMod(new MoonWalk());
         addMod(new ReverseStep());
@@ -60,6 +61,7 @@ public class ModuleManager {
         addMod(new MountBypass());
         addMod(new Xcarry());
         this.addMod(new Velocity());
+        this.addMod(new BlockPhase());
         //Misc
         addMod(new RageQuit());
         addMod(new AntiAim());
@@ -68,6 +70,7 @@ public class ModuleManager {
         addMod(new InstantMine());
         addMod(new GhastNotifier());
         addMod(new ArmorNotification());
+        this.addMod(new OldNames());
         //Client
         addMod(new LoadConfig());
         addMod(new FpsLimiter());
@@ -102,6 +105,7 @@ public class ModuleManager {
         addMod(new Fullbright());
         addMod(new Zoom());
         addMod(new FOVSlider());
+        this.addMod(new BowAnimations());
         //chat
         addMod(new ChatSuffix());
         addMod(new ChatEncrypt());

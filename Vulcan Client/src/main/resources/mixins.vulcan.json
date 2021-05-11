@@ -6,6 +6,7 @@
   "mixins": [
     "MixinNetworkManager",
     "MixinRenderPlayer",
-    "MixinPlayerControllerMP"
+    "MixinPlayerControllerMP",
+    "MixinBow"
   ]
 }

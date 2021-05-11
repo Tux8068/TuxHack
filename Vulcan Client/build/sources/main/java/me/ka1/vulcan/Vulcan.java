@@ -83,6 +83,7 @@ public class Vulcan {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
+        log.info("2q1 was here");
     }
 
   /*  @Mod.EventHandler

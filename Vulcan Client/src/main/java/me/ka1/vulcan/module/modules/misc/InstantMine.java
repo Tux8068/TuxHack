@@ -138,6 +138,8 @@ public class InstantMine extends Module {
             lastBlock = event.getPos();
             blockState = mc.world.getBlockState(event.getPos());
             breakable = false;
+            direction = event.getDirection();
+            breakTimer.reset();
             timer.reset();
             event.cancel();
         }
