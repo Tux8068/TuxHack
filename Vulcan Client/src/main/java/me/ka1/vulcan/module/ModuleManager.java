@@ -109,6 +109,7 @@ public class ModuleManager {
         //chat
         addMod(new ChatSuffix());
         addMod(new ChatEncrypt());
+        addMod(new ShulkerAura());
     }
 
     public static void addMod(Module m){
