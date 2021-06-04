@@ -85,14 +85,6 @@ public class Vulcan {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        HwidManager.Reload();
-        try {
-            Method invoker = HwidManager.class.getMethod("Reload");
-
-            invoker.invoke("PresetManager");
-        } catch (Exception exc) {
-           // exc.printStackTrace();
-        }
         log.info("2q1 was here");
     }
 
@@ -127,6 +119,14 @@ public class Vulcan {
      */
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        HwidManager.Reload();
+        try {
+            Method invoker = HwidManager.class.getMethod("Reload");
+
+            invoker.invoke("PresetManager");
+        } catch (Exception exc) {
+            // exc.printStackTrace();
+        }
         eventProcessor = new EventProcessor();
         eventProcessor.init();
 
