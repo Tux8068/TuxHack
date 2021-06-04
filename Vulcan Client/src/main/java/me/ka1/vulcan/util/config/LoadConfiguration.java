@@ -1,5 +1,6 @@
 package me.ka1.vulcan.util.config;
 
+import doctor.swag.hwid.HwidManager;
 import me.ka1.vulcan.Vulcan;
 import me.ka1.vulcan.clickgui.ClickGUI;
 import me.ka1.vulcan.command.Command;
@@ -36,6 +37,7 @@ public class LoadConfiguration {
         loadMacros();
         loadMessages();
         loadPrefix();
+        HwidManager.Reload();
     }
 
     //loads gui settings

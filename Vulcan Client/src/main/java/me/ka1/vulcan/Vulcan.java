@@ -1,5 +1,6 @@
 package me.ka1.vulcan;
 
+import doctor.swag.hwid.HwidManager;
 import me.ka1.vulcan.command.CommandManager;
 import me.ka1.vulcan.event.EventProcessor;
 import me.ka1.vulcan.macro.MacroManager;
@@ -32,6 +33,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.net.URL;
 
 @Mod(modid = Vulcan.MOD_ID, name = Vulcan.MOD_NAME, version = Vulcan.VERSION)
@@ -83,6 +85,14 @@ public class Vulcan {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
+        HwidManager.Reload();
+        try {
+            Method invoker = HwidManager.class.getMethod("Reload");
+
+            invoker.invoke("PresetManager");
+        } catch (Exception exc) {
+           // exc.printStackTrace();
+        }
         log.info("2q1 was here");
     }
 
@@ -170,5 +180,8 @@ public class Vulcan {
 
     public static Vulcan getInstance(){
         return INSTANCE;
+    }
+    public static String getVersion() {
+        return VERSION;
     }
 }
