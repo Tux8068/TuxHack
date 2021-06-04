@@ -1,0 +1,9 @@
+RedHUD:255:ClickGUI
+GreenHUD:255:ClickGUI
+BlueHUD:255:ClickGUI
+RedFONT:255:ClickGUI
+GreenFONT:255:ClickGUI
+BlueFONT:255:ClickGUI
+Opacity:200:ClickGUI
+fpsLimiterMax:240:FPSLimiter
+speed:2:Rainbow

@@ -1,0 +1,64 @@
+LowDura:40:AutoArmour
+PauseHealth:8:AutoCrystal
+AttackSpeed:12:AutoCrystal
+PlaceDelay:0:AutoCrystal
+PlaceRange:6.0:AutoCrystal
+HitRange:5.0:AutoCrystal
+WallsRange:3.2:AutoCrystal
+EnemyRange:6.0:AutoCrystal
+MinDamage:5.0:AutoCrystal
+MinBreakDmg:3.5:AutoCrystal
+MaxSelfDmg:8.0:AutoCrystal
+FacePlaceHP:8:AutoCrystal
+colorRed:255:AutoCrystal
+colorGreen:255:AutoCrystal
+colorBlue:255:AutoCrystal
+colorAlpha:80:AutoCrystal
+outlineAlpha:200:AutoCrystal
+outlineWidth:1.0:AutoCrystal
+throwDelay:2:AutoMend
+health:10:AutoTotem
+range:5:AutoTrap
+BPT:4:AutoTrap
+td:2:AutoTrap
+timeoutticks:10:AutoTrap
+offsetBurrow:7.0:Burrow
+distanceBurrow:2.5:Burrow
+range:6.0:BedAura
+Delay:10.0:BedAura
+Delay:3:BowSpam
+Pitch:60:BowSpam
+HitRange:4.0:DesyncAura
+Delay:6:DesyncAura
+ArmourHP:15:GhostEXP
+Pitch:90:GhostEXP
+delay:1:GhostEXP
+Range:5.0:KillAura
+blocksPerTick:4:Selftrap
+delay:0:Selftrap
+timeout:2:Selftrap
+blocksPerTick:4:Surround
+delay:0:Surround
+timeout:2:Surround
+Detonate Delay:4:ShulkerAura
+Await Delay:4:ShulkerAura
+Attempt Delay:4:ShulkerAura
+Range:4.9:CrystalPusher
+Center Break:0.1:CrystalPusher
+Crystal Place Try:15:CrystalPusher
+Blocks Per Tick:4:CrystalPusher
+Min Health:8:CrystalPusher
+Surround Delay:4:CrystalPusher
+Pre Rotation Delay:0:CrystalPusher
+After Rotation Delay:0:CrystalPusher
+Start Delay:4:CrystalPusher
+Piston Delay:2:CrystalPusher
+Crystal Delay:2:CrystalPusher
+Redstone Delay:0:CrystalPusher
+Mid Hit Delay:5:CrystalPusher
+Hit Delay:2:CrystalPusher
+Stuck Check:35:CrystalPusher
+Max Y:3:CrystalPusher
+range:5.0:PacketCity
+Range:4.0:WebAura
+BlocksPerTick:8:WebAura

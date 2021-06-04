@@ -1,0 +1,8 @@
+BreakModes:All:AutoCrystal
+Hand:Main:AutoCrystal
+renderMode:Gradient:AutoCrystal
+item:totem:AutoTotem
+mode:Cheap:AutoTrap
+placeMode:Observer:CrystalPusher
+Break:red:PacketCity
+Break:red:PacketCity

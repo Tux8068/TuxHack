@@ -21,8 +21,8 @@ apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'com.github.johnrengelman.shadow'
 
-group = 'me.ka1.vulcan'
-version = '1.2'
+group = 'me.tux.tuxhack'
+version = '1.4'
 archivesBaseName = 'tuxhack'
 
 minecraft {

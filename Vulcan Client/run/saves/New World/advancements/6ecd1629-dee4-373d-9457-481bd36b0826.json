@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2021-05-09 14:58:43 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2021-05-09 14:58:43 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "beaches": "2021-05-09 14:58:43 +0100",
+      "ocean": "2021-05-09 14:58:59 +0100",
+      "river": "2021-05-09 14:59:03 +0100"
+    },
+    "done": false
+  }
+}

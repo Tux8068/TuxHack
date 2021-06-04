@@ -1,0 +1,14 @@
+{
+  "minecraft:nether/get_wither_skull": {
+    "criteria": {
+      "wither_skull": "2021-06-01 15:15:49 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "taiga": "2021-06-01 15:15:49 +0100"
+    },
+    "done": false
+  }
+}

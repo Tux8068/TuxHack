@@ -2,7 +2,7 @@
     {
         "modid": "tuxhack",
         "name": "TuxHack",
-        "description": "TuxHack is tuxiscool's funny mod using "vulcan" client as the base.",
+        "description": "TuxHack is tuxiscool's funny mod using vulcan.",
         "version": "${version}",
         "mcversion": "${mcversion}",
         "url": "https://discord.gg/sVFN5Bf4N2",

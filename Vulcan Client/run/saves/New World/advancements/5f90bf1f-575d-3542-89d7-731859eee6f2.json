@@ -1,0 +1,31 @@
+{
+  "minecraft:recipes/tools/flint_and_steel": {
+    "criteria": {
+      "has_obsidian": "2021-06-03 20:32:26 +0100"
+    },
+    "done": true
+  },
+  "minecraft:story/form_obsidian": {
+    "criteria": {
+      "obsidian": "2021-06-03 20:32:26 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/enchanting_table": {
+    "criteria": {
+      "has_obsidian": "2021-06-03 20:32:26 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "beaches": "2021-06-03 20:26:00 +0100",
+      "plains": "2021-06-03 20:28:11 +0100",
+      "taiga": "2021-06-03 20:27:13 +0100",
+      "taiga_hills": "2021-06-03 20:27:16 +0100",
+      "ocean": "2021-06-03 20:26:25 +0100",
+      "river": "2021-06-03 20:27:14 +0100"
+    },
+    "done": false
+  }
+}

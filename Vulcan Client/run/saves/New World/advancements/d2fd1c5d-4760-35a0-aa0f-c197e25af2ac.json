@@ -1,0 +1,18 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "deep_ocean": "2021-05-06 21:09:04 +0100",
+      "beaches": "2021-05-06 21:09:19 +0100",
+      "taiga": "2021-05-06 21:09:27 +0100",
+      "ocean": "2021-05-06 21:09:36 +0100",
+      "river": "2021-05-06 21:09:29 +0100"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/tame_an_animal": {
+    "criteria": {
+      "tamed_animal": "2021-05-06 21:10:14 +0100"
+    },
+    "done": true
+  }
+}

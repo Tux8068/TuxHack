@@ -1,0 +1,9 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "beaches": "2021-05-06 17:04:23 +0100",
+      "taiga": "2021-05-06 17:04:06 +0100"
+    },
+    "done": false
+  }
+}
