@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-TweakOrder: 0
-MixinConfigs: mixins.vulcan.json
-FMLCorePluginContainsFMLMod: true
-FMLAT: vulcan_at.cfg
-TweakClass: org.spongepowered.asm.launch.MixinTweaker
-ForceLoadAsMod: true
-FMLCorePlugin: me.ka1.vulcan.Vulcan
-
