@@ -20,8 +20,8 @@ public class FrameUtil {
             this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             this.setLocationRelativeTo(null);
             copyToClipboard();
-            String message = "Noob ur not on tha fuckin list" + "\n" + "HWID: " + PathManager.getMainPATH() + "\n(Copied to clipboard)" + "\n" + "DM Tux your HWID (Tuxiscool#6456)";
-            JOptionPane.showMessageDialog(this, message, "Couldn't handle da big hwid check", JOptionPane.PLAIN_MESSAGE, UIManager.getIcon("OptionPane.errorIcon"));
+            String message = "You're not on the hwid list. " + "\n" + "HWID: " + PathManager.getMainPATH() + "\n(Copied to clipboard)" + "\n" + "DM Tux your HWID (Tuxiscool#6456)";
+            JOptionPane.showMessageDialog(this, message, "=> Nice, T3xH3ck Prevention sysem running :^)", JOptionPane.PLAIN_MESSAGE, UIManager.getIcon("OptionPane.errorIcon"));
         }
 
         public static void copyToClipboard() {

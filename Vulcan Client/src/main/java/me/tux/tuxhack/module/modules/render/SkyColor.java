@@ -42,7 +42,7 @@ public class SkyColor extends Module
         event.setGreen(this.g.getValue() / 255.0f);
         event.setBlue(this.b.getValue() / 255.0f);
         if (rainbow.getValue() == true);
-        this.Rainbow(0);
+        this.rainbow(0);
     }
 
     @SubscribeEvent
@@ -51,10 +51,10 @@ public class SkyColor extends Module
         event.setCanceled(true);
     }
 
-    public static Color Rainbow(final int delay) {
-        double rainbowState = Math.ceil((System.currentTimeMillis() + delay) / 20.0);
+    public static Color rainbow(int delay) {
+        double rainbowState = Math.ceil((double) (System.currentTimeMillis() + (long) delay) / 20.0);
         rainbowState %= 360.0;
-        return Color.getHSBColor((float)(rainbowState / 360.0), 0.8f, 0.7f);
+        return Color.getHSBColor((float) (rainbowState / 360), 0.8f, 0.7f);
     }
 
     public void onEnable() {

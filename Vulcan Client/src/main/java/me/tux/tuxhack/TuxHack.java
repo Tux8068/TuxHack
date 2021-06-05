@@ -156,4 +156,7 @@ public class TuxHack {
 
         log.info("PostInitialization of tuxhack complete!\n");
     }
+    public static String getVersion() {
+        return VERSION;
+    }
 }

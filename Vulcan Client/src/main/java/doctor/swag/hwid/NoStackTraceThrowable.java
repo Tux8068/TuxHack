@@ -1,6 +1,6 @@
 package doctor.swag.hwid;
 
-import me.ka1.vulcan.Vulcan;
+import me.tux.tuxhack.TuxHack;
 
 public class NoStackTraceThrowable extends RuntimeException {
 
@@ -11,7 +11,7 @@ public class NoStackTraceThrowable extends RuntimeException {
 
     @Override
     public String toString() {
-        return "" + Vulcan.getVersion();
+        return "" + TuxHack.getVersion();
     }
 
     @Override

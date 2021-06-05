@@ -49,8 +49,8 @@ public class CommandColor extends Module {
         brackets.add("Aqua");
         brackets.add("Light Purple");
         brackets.add("White");
-        CommandColor = registerMode("Text", "Color", colors, "Light Purple");
-        BracketColor = registerMode("Brackets", "BracketColor", brackets, "Light Purple");
+        CommandColor = registerMode("Text", "Color", colors, "Aqua");
+        BracketColor = registerMode("Brackets", "BracketColor", brackets, "Gold");
         return false;
     }
 

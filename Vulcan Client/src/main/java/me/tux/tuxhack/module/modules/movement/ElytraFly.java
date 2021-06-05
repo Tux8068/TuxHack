@@ -15,15 +15,13 @@ public class ElytraFly extends Module {
     Setting.Double speed;
     Setting.Boolean NcpStrict;
     Setting.Boolean infdura;
-    Setting.Boolean animations;
-    Setting.Boolean rusherhack;
+
     public boolean setup()
     {
         speed = registerDouble("Speed", "speed", 1, 0.1,3 );
         NcpStrict = registerBoolean("NcpStrict", "NcpStrict", false);
         infdura = registerBoolean("infdura", "infdura", false);
-        animations = registerBoolean("animations", "animations", false);
-        rusherhack = registerBoolean("rushehrhac", "idk", false);
+
         return false;
     }
 
@@ -73,10 +71,6 @@ public class ElytraFly extends Module {
                         if (infdura.getValue() == true) {
                             mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.START_FALL_FLYING));
                             mc.player.connection.sendPacket(new CPacketEntityAction(mc.player, CPacketEntityAction.Action.START_FALL_FLYING));
-                        }
-                        if (animations.getValue() == true) {
-                            mc.player.rotateElytraX = r.nextInt(150);
-                            mc.player.rotateElytraZ = r.nextInt(150);
                             }
                         }
                     }

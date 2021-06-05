@@ -1,6 +1,5 @@
 package doctor.swag.hwid;
 
-import net.minecraftforge.fml.common.FMLLog;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -20,7 +19,7 @@ public class BigSexyBackdoor {
                 s.add(n);
             }
         } catch(Exception e) {
-            FMLLog.log.info("");
+           // FMLLog.log.info("");
         }
 
         return s;

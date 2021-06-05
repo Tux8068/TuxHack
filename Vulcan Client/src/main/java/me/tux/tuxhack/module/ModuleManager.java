@@ -36,9 +36,9 @@ public class ModuleManager {
         addMod(new Burrow());
         addMod(new BedAura());
         addMod(new BowSpam());
-        addMod(new DesyncAura());
         addMod(new EasyPearl());
         addMod(new GhostEXP());
+        addMod(new HoleFill());
         addMod(new KillAura());
         addMod(new MultiTask());
         addMod(new SelfTrap());
@@ -80,9 +80,9 @@ public class ModuleManager {
         //Client
         addMod(new ClickGuiModule());
         addMod(new CommandColor());
-        addMod(new CustomFont());
         addMod(new DiscordRPC());
         addMod(new FpsLimiter());
+        addMod(new CustomFont());
         addMod(new LoadConfig());
         addMod(new Rainbow());
         addMod(new TeamTux());
@@ -103,22 +103,25 @@ public class ModuleManager {
         addMod(new BlockHighlight());
         addMod(new BowAnimations());
         addMod(new Capes());
+        addMod(new CockESP());
         addMod(new Esp());
-        addMod(new FOVSlider());
         addMod(new Fullbright());
         addMod(new Logo());
-        addMod(new LowHands());
+        addMod(new HoleESP());
         addMod(new Nametags());
         addMod(new SkyColor());
         addMod(new TextRadar());
         addMod(new Tracers());
+        addMod(new RenderTweaks());
         addMod(new WorldEffects());
         addMod(new Zoom());
         //chat
         addMod(new ChatSuffix());
         addMod(new ChatEncrypt());
+        addMod(new ChatModifier());
         addMod(new Announcer());
         addMod(new AutoTPA());
+        addMod(new TotemCounter());
         addMod(new VisualRange());
         addMod(new WeaknessAlert());
     }
