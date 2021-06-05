@@ -118,7 +118,6 @@ public class ModuleManager {
         //chat
         addMod(new ChatSuffix());
         addMod(new ChatEncrypt());
-        addMod(new ChatModifier());
         addMod(new Announcer());
         addMod(new AutoTPA());
         addMod(new TotemCounter());

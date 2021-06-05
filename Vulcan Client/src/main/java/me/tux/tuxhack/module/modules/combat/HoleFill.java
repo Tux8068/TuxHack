@@ -26,8 +26,7 @@ import java.util.List;
 import net.minecraft.util.math.BlockPos;
 import java.util.ArrayList;
 
-public class HoleFill extends Module
-{
+public class HoleFill extends Module {
     private ArrayList<BlockPos> holes;
     private final List<Block> obbyonly;
     private final List<Block> bothonly;
@@ -39,6 +38,7 @@ public class HoleFill extends Module
     Setting.Integer waitTick;
     Setting.Boolean chat;
     Setting.Boolean rotate;
+    Setting.Boolean Toggle;
     Setting.Mode type;
     BlockPos pos;
     private int waitCounter;
@@ -66,6 +66,7 @@ public class HoleFill extends Module
         this.waitTick = this.registerInteger("Tick Delay", "TickDelay", 1, 0, 20);
         this.rotate = this.registerBoolean("Rotate", "Rotate", false);
         this.chat = this.registerBoolean("Toggle Msg", "ToggleMsg", false);
+        this.Toggle = this.registerBoolean("Toggle", "Toggle", true);
         return false;
     }
 
@@ -84,7 +85,7 @@ public class HoleFill extends Module
         if (this.type.getValue().equalsIgnoreCase("Web")) {
             this.list = this.webonly;
         }
-        final Iterable<BlockPos> blocks = (Iterable<BlockPos>)BlockPos.getAllInBox(HoleFill.mc.player.getPosition().add(-this.range.getValue(), (double)(-this.yRange.getValue()), -this.range.getValue()), HoleFill.mc.player.getPosition().add(this.range.getValue(), (double)this.yRange.getValue(), this.range.getValue()));
+        final Iterable<BlockPos> blocks = (Iterable<BlockPos>) BlockPos.getAllInBox(HoleFill.mc.player.getPosition().add(-this.range.getValue(), (double) (-this.yRange.getValue()), -this.range.getValue()), HoleFill.mc.player.getPosition().add(this.range.getValue(), (double) this.yRange.getValue(), this.range.getValue()));
         for (final BlockPos pos : blocks) {
             if (!HoleFill.mc.world.getBlockState(pos).getMaterial().blocksMovement() && !HoleFill.mc.world.getBlockState(pos.add(0, 1, 0)).getMaterial().blocksMovement()) {
                 final boolean solidNeighbours = (HoleFill.mc.world.getBlockState(pos.add(1, 0, 0)).getBlock() == Blocks.BEDROCK | HoleFill.mc.world.getBlockState(pos.add(1, 0, 0)).getBlock() == Blocks.OBSIDIAN) && (HoleFill.mc.world.getBlockState(pos.add(0, 0, 1)).getBlock() == Blocks.BEDROCK | HoleFill.mc.world.getBlockState(pos.add(0, 0, 1)).getBlock() == Blocks.OBSIDIAN) && (HoleFill.mc.world.getBlockState(pos.add(-1, 0, 0)).getBlock() == Blocks.BEDROCK | HoleFill.mc.world.getBlockState(pos.add(-1, 0, 0)).getBlock() == Blocks.OBSIDIAN) && (HoleFill.mc.world.getBlockState(pos.add(0, 0, -1)).getBlock() == Blocks.BEDROCK | HoleFill.mc.world.getBlockState(pos.add(0, 0, -1)).getBlock() == Blocks.OBSIDIAN) && HoleFill.mc.world.getBlockState(pos.add(0, 0, 0)).getMaterial() == Material.AIR && HoleFill.mc.world.getBlockState(pos.add(0, 1, 0)).getMaterial() == Material.AIR && HoleFill.mc.world.getBlockState(pos.add(0, 2, 0)).getMaterial() == Material.AIR;
@@ -99,7 +100,7 @@ public class HoleFill extends Module
             final ItemStack stack = HoleFill.mc.player.inventory.getStackInSlot(i);
             if (stack != ItemStack.EMPTY) {
                 if (stack.getItem() instanceof ItemBlock) {
-                    final Block block = ((ItemBlock)stack.getItem()).getBlock();
+                    final Block block = ((ItemBlock) stack.getItem()).getBlock();
                     if (this.list.contains(block)) {
                         newSlot = i;
                         break;
@@ -120,6 +121,7 @@ public class HoleFill extends Module
             }
             this.waitCounter = 0;
         }
+        this.disable();
         return newSlot;
     }
 
@@ -137,7 +139,7 @@ public class HoleFill extends Module
     }
 
     private void place(final BlockPos blockPos) {
-        for (final Entity entity : HoleFill.mc.world.getEntitiesWithinAABBExcludingEntity((Entity)null, new AxisAlignedBB(blockPos))) {
+        for (final Entity entity : HoleFill.mc.world.getEntitiesWithinAABBExcludingEntity((Entity) null, new AxisAlignedBB(blockPos))) {
             if (entity instanceof EntityLivingBase) {
                 return;
             }
@@ -152,21 +154,20 @@ public class HoleFill extends Module
             final BlockPos neighbor = pos.offset(side);
             final EnumFacing side2 = side.getOpposite();
             if (canBeClicked(neighbor)) {
-                final Vec3d hitVec = new Vec3d((Vec3i)neighbor).add(0.5, 0.5, 0.5).add(new Vec3d(side2.getDirectionVec()).scale(0.5));
+                final Vec3d hitVec = new Vec3d((Vec3i) neighbor).add(0.5, 0.5, 0.5).add(new Vec3d(side2.getDirectionVec()).scale(0.5));
                 if (rotate) {
                     faceVectorPacketInstant(hitVec);
                 }
-                HoleFill.mc.player.connection.sendPacket((Packet)new CPacketEntityAction((Entity)HoleFill.mc.player, CPacketEntityAction.Action.START_SNEAKING));
+                HoleFill.mc.player.connection.sendPacket((Packet) new CPacketEntityAction((Entity) HoleFill.mc.player, CPacketEntityAction.Action.START_SNEAKING));
                 processRightClickBlock(neighbor, side2, hitVec);
                 HoleFill.mc.player.swingArm(EnumHand.MAIN_HAND);
                 HoleFill.mc.rightClickDelayTimer = 0;
-                HoleFill.mc.player.connection.sendPacket((Packet)new CPacketEntityAction((Entity)HoleFill.mc.player, CPacketEntityAction.Action.STOP_SNEAKING));
+                HoleFill.mc.player.connection.sendPacket((Packet) new CPacketEntityAction((Entity) HoleFill.mc.player, CPacketEntityAction.Action.STOP_SNEAKING));
                 return true;
             }
         }
         return false;
     }
-
     public static boolean canBeClicked(final BlockPos pos) {
         return getBlock(pos).canCollideCheck(getState(pos), false);
     }
