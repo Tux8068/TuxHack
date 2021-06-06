@@ -96,7 +96,6 @@ public class BlockPhase extends Module {
         });
 
         KeyBinding left,right,down,up;
-
         long last = 0;
 
         @Override

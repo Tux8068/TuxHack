@@ -159,15 +159,13 @@ public class ShulkerAura extends Module {
 
                 for(Entity e : mc.world.loadedEntityList){
                     if(e instanceof EntityEnderCrystal){
-                        if(e != null){
-                            if(!e.isDead){
-                                if(mc.player.getDistance(e)<5){
-                                    mc.player.connection.sendPacket(new CPacketUseEntity(e));
-                                    mc.player.connection.sendPacket(new CPacketAnimation(EnumHand.MAIN_HAND));
-                                    detonate = false;
-                                    finishedDetonate = true;
-                                    waitTicks = 0;
-                                }
+                        if(!e.isDead){
+                            if(mc.player.getDistance(e)<5){
+                                mc.player.connection.sendPacket(new CPacketUseEntity(e));
+                                mc.player.connection.sendPacket(new CPacketAnimation(EnumHand.MAIN_HAND));
+                                detonate = false;
+                                finishedDetonate = true;
+                                waitTicks = 0;
                             }
                         }
                     }

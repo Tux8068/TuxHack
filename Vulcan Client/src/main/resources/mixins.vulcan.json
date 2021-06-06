@@ -8,6 +8,7 @@
     "MixinRenderPlayer",
     "MixinPlayerControllerMP",
     "MixinBow",
+    "MixinEntityRenderer",
     "MixinAbstractClientPlayer"
   ]
 }
