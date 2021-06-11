@@ -1,8 +1,8 @@
 package me.tux.tuxhack;
 
 import doctor.swag.hwid.HwidManager;
-import me.tux.tuxhack.Cape.CapeManager;
-import me.tux.tuxhack.ClickGui2.ClickGUI2;
+import me.tux.tuxhack.cape.CapeManager;
+import me.tux.tuxhack.clickgui2.ClickGUI2;
 import me.tux.tuxhack.command.CommandManager;
 import me.tux.tuxhack.event.EventProcessor;
 import me.tux.tuxhack.macro.MacroManager;
@@ -77,7 +77,7 @@ public class TuxHack {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        log.info("h");
+        log.info("travis owns u and all");
     }
 
     /**
@@ -89,7 +89,7 @@ public class TuxHack {
         /**
          * HWID stuff
          */
-        HwidManager.Reload();
+//        HwidManager.Reload();
 
         try {
             Method invoker = HwidManager.class.getMethod("Reload");

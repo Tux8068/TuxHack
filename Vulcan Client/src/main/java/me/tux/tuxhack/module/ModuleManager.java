@@ -1,7 +1,7 @@
 package me.tux.tuxhack.module;
 
 import me.tux.tuxhack.event.events.RenderEvent;
-import me.tux.tuxhack.module.modules.Hud.*;
+import me.tux.tuxhack.module.modules.hud.*;
 import me.tux.tuxhack.module.modules.chat.*;
 import me.tux.tuxhack.module.modules.movement.*;
 import me.tux.tuxhack.util.RenderUtil;
@@ -59,7 +59,7 @@ public class ModuleManager {
         addMod(new Sprint());
         addMod(new Speed());
         addMod(new Step());
-
+        addMod(new NoFall());
         //Player
         addMod(new BlockPhase());
         addMod(new MountBypass());
@@ -116,6 +116,7 @@ public class ModuleManager {
         addMod(new RenderTweaks());
         addMod(new WorldEffects());
         addMod(new Zoom());
+        addMod(new Aspect());
         //chat
         addMod(new ChatSuffix());
         addMod(new ChatEncrypt());
