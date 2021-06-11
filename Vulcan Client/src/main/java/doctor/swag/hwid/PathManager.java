@@ -1,6 +1,5 @@
 package doctor.swag.hwid;
 
-
 import me.tux.tuxhack.util.Wrapper;
 import net.minecraft.client.Minecraft;
 import org.apache.commons.codec.digest.DigestUtils;
