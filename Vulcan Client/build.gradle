@@ -63,6 +63,7 @@ dependencies {
         exclude module: 'commons-io'
     }
     compile(group: 'com.github.cookiedragon234', name: 'EventDispatcher', version:'4c68f11e028665bd05d2bdb3326e344f894da312')
+    compile group: 'com.github.oshi', name: 'oshi-core', version: '5.7.2'
     compile(group: 'io.github.classgraph', name: 'classgraph', version: '4.8.86')
     compile "com.github.ZeroMemes:Alpine:1.5"
     compile "com.github.ionar2:Alpine:1.9f"
@@ -105,6 +106,7 @@ shadowJar {
         include(dependency('com.github.ionar2:Alpine'))
         include(dependency('net.jodah:typetools'))
         include(dependency('com.googlecode.json-simple:json-simple:1.1.1'))
+        include(dependency("com.github.oshi:oshi-core"))
     }
 
     exclude 'dummyThing'
