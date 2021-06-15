@@ -57,6 +57,7 @@ public class ModuleManager {
         addMod(new HoleTP());
         addMod(new MoonWalk());
         addMod(new NoFall());
+        addMod(new PacketTP());
         addMod(new ReverseStep());
         addMod(new Sprint());
         addMod(new Speed());

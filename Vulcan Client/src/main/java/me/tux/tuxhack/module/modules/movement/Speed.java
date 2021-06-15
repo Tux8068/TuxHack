@@ -61,9 +61,7 @@ public class Speed extends Module
                     }
                     break Label_0126_1;
                 }
-            }
-            icee[0] = b;
-            if (!icee[0]) {
+
                 if (!Speed.mc.player.isInLava() && !Speed.mc.player.isInWater() && !Speed.mc.player.isOnLadder()) {
                     if (this.Mode.getValue().equalsIgnoreCase("Strafe")) {
                         motionY[0] = 0.41999998688697815;
