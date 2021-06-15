@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class VisualRange extends Module {
     public VisualRange() {
-        super("VisualRange", "tells you when someone comes close", Category.Chat);
+        super("VisualRange", "tells you when someone comes close", Category.CHAT);
     }
     List<Entity> knownPlayers = new ArrayList<>();;
     List<Entity> players;

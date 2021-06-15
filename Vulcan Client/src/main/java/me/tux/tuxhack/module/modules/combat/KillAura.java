@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 public class KillAura extends Module {
     public KillAura(){
-        super("KillAura", "Automatically smacks people", Category.Combat);
+        super("KillAura", "Automatically smacks people", Category.COMBAT);
     }
 
     private Setting.Boolean swordOnly;

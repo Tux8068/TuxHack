@@ -22,7 +22,7 @@ import java.util.UUID;
 
 public class OldNames extends Module {
     public OldNames() {
-        super("OldNames", "pulls up old names", Category.Misc);
+        super("OldNames", "pulls up old names", Category.MISC);
     }
 
     public void sendLog(String msg) {

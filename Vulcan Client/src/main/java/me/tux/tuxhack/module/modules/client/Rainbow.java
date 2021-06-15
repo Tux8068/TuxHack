@@ -5,7 +5,7 @@ import me.tux.tuxhack.setting.Setting;
 
 public class Rainbow extends Module {
     public Rainbow() {
-        super("Rainbow", Category.Client);
+        super("Rainbow", Category.CLIENT);
     }
 
     Setting.Integer speed;

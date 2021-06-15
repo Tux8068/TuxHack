@@ -19,7 +19,7 @@ public abstract class Command {
 
     public static void sendClientMessage(String message){
         if (MsgWaterMark) {
-            Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(new TextComponentString(CommandColor.getBrackets() + "{" + CommandColor.getTextColor() + "TuxHack" + CommandColor.getBrackets() + "} " + ChatFormatting.RESET + cf + message), 69);
+            Minecraft.getMinecraft().ingameGUI.getChatGUI().printChatMessageWithOptionalDeletion(new TextComponentString(CommandColor.getBrackets() + " [" + CommandColor.getTextColor() + "TuxHack" + CommandColor.getBrackets() + "] " + ChatFormatting.RESET + cf + message), 69);
         }else {
             mc.player.sendMessage(new TextComponentString(cf + message));
         }

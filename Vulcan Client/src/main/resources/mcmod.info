@@ -7,9 +7,9 @@
         "mcversion": "${mcversion}",
         "url": "https://discord.gg/sVFN5Bf4N2",
         "updateUrl": "",
-        "authorList": [Tuxiscool, 2q1, _KA1],
+        "authorList": "Tuxiscool, 2q1, _KA1",
         "credits": "Tuxiscool",
-        "logoFile": "assets/minecraft/vulcan.png",
+        "logoFile": "",
         "screenshots": [],
         "dependencies": []
     }

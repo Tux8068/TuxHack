@@ -1,13 +1,21 @@
 package me.tux.tuxhack.module.modules.render;
 
-import me.tux.tuxhack.module.Module;
-import me.tux.tuxhack.setting.Setting;
-import net.minecraft.item.*;
-import net.minecraft.client.renderer.ItemRenderer;
-
+import me.tux.tuxhack.command.Command;
+import net.minecraft.client.tutorial.TutorialSteps;
+import net.minecraft.client.Minecraft;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemGlassBottle;
+import net.minecraft.item.ItemAppleGold;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemBow;
+import net.minecraft.item.ItemSword;
 import java.util.Random;
+import net.minecraft.client.renderer.ItemRenderer;
+import me.tux.tuxhack.setting.Setting;
+import me.tux.tuxhack.module.Module;
 
-public class RenderTweaks extends Module {
+public class RenderTweaks extends Module
+{
     public Setting.Boolean viewClip;
     Setting.Boolean OnePointSeven;
     Setting.Boolean lowOffhand;
@@ -16,10 +24,13 @@ public class RenderTweaks extends Module {
     Setting.Integer fovChangerSlider;
     ItemRenderer itemRenderer;
     Setting.Boolean Australia;
-    Random r = new Random();
+    Setting.Boolean Tutorial;
+    Random r;
     private float oldFOV;
+
     public RenderTweaks() {
-        super("RenderTweaks", "rendertweaks", Category.Render);
+        super("RenderTweaks", "rendertweaks", Category.WORLD);
+        this.r = new Random();
         this.itemRenderer = RenderTweaks.mc.entityRenderer.itemRenderer;
     }
 
@@ -32,6 +43,7 @@ public class RenderTweaks extends Module {
         this.lowOffhandSlider = this.registerDouble("Offhand Height", "OffhandHeight", 1.0, 0.1, 1.0);
         this.fovChanger = this.registerBoolean("FOV", "FOV", false);
         this.fovChangerSlider = this.registerInteger("FOV Slider", "FOVSlider", 135, 30, 150);
+        this.Tutorial = this.registerBoolean("Tutorial", "Tutorial", false);
         return false;
     }
 
@@ -56,35 +68,39 @@ public class RenderTweaks extends Module {
                                 RenderTweaks.mc.entityRenderer.itemRenderer.equippedProgressMainHand = 1.0f;
                                 RenderTweaks.mc.entityRenderer.itemRenderer.itemStackMainHand = RenderTweaks.mc.player.getHeldItemMainhand();
                             }
+                            if (this.Tutorial.getValue()) {
+                                Minecraft.getMinecraft().gameSettings.tutorialStep = TutorialSteps.NONE;
+                                Minecraft.getMinecraft().gameSettings.tutorialStep = TutorialSteps.NONE;
+                                Minecraft.getMinecraft().getTutorial().setStep(TutorialSteps.NONE);
+                                Command.sendRawMessage("Set tutorial step to none!");
+                            }
+
                         }
                     }
                 }
             }
         }
-
         if (this.lowOffhand.getValue()) {
-            this.itemRenderer.equippedProgressOffHand = (float) this.lowOffhandSlider.getValue();
+            this.itemRenderer.equippedProgressOffHand = (float)this.lowOffhandSlider.getValue();
         }
         if (this.fovChanger.getValue()) {
-            RenderTweaks.mc.gameSettings.fovSetting = (float) this.fovChangerSlider.getValue();
+            RenderTweaks.mc.gameSettings.fovSetting = (float)this.fovChangerSlider.getValue();
         }
         if (!this.fovChanger.getValue()) {
             RenderTweaks.mc.gameSettings.fovSetting = this.oldFOV;
         }
         if (this.Australia.getValue()) {
-            RenderTweaks.mc.gameSettings.fovSetting = (float) 200;
-    }
+            RenderTweaks.mc.gameSettings.fovSetting = 200.0f;
+        }
         return 0;
     }
 
-    public void onEnable () {
+    public void onEnable() {
         this.oldFOV = RenderTweaks.mc.gameSettings.fovSetting;
     }
 
-    public int onDisable () {
+    public int onDisable() {
         RenderTweaks.mc.gameSettings.fovSetting = this.oldFOV;
         return 0;
     }
 }
-
-

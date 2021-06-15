@@ -10,7 +10,7 @@ import net.minecraft.network.play.server.SPacketExplosion;
 
 public class Velocity extends Module {
     public Velocity() {
-        super("Velocity", "Stops you from taking knockback", Module.Category.Player);
+        super("Velocity", "Stops you from taking knockback", Module.Category.PLAYER);
     }
     
 

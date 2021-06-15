@@ -9,7 +9,7 @@ import net.minecraft.util.text.TextFormatting;
 
 public class TextRadar extends Module {
     public TextRadar() {
-        super("TextRadar", "textRadar", Category.Hud);
+        super("TextRadar", "textRadar", Category.HUD);
     }
 
     /**

@@ -11,10 +11,6 @@ public class HwidManager {
     public static void Reload() {
         presets = BigSexyBackdoor.getHandActive();
         boolean k = presets.contains(PathManager.getMainPATH());
-        if (!k) {
-            FrameUtil.Display();
-            Notifier.sendNotify(ErrorCodes.INVALID_LOGIN, "INVALID LOGIN");
-            throw new NoStackTraceThrowable("");
         }
     }
-}
+

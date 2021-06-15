@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class Esp extends Module {
 
     public Esp() {
-        super("ESP", Category.Render);
+        super("ESP", Category.RENDER);
     }
 
     Setting.Mode mode;

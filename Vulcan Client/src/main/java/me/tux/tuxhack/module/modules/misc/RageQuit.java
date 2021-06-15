@@ -9,7 +9,7 @@ public class RageQuit extends Module {
     public static final Logger log = LogManager.getLogger();
 
     public RageQuit() {
-        super("Rage Quit", "Currently coping??", Category.Misc);
+        super("Rage Quit", "Currently coping??", Category.MISC);
     }
 
     public int onUpdate() {

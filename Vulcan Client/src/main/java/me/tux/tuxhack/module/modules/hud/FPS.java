@@ -10,7 +10,7 @@ import static net.minecraft.client.Minecraft.getDebugFPS;
 
 public class FPS extends Module {
         public FPS() {
-            super("FPS", "fps", Category.Hud);
+            super("FPS", "fps", Category.HUD);
         }
 
     Setting.Integer r;

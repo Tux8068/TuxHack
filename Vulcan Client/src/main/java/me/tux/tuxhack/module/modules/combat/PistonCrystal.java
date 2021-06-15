@@ -104,7 +104,7 @@ public class PistonCrystal extends Module {
     }
 
     public PistonCrystal() {
-        super("CrystalPusher", "Automatically has sex with EVERYONE in render distance (except SB99 and QQ)", Category.Combat);
+        super("CrystalPusher", "Automatically has sex with EVERYONE in render distance (except SB99 and QQ)", Category.COMBAT);
     }
 
         private boolean noMaterials = false,

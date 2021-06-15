@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Capes extends Module {
 
     public Capes() {
-        super("Capes", Category.Render);
+        super("Capes", Category.RENDER);
     }
     public static final ResourceLocation CAPE = new ResourceLocation("textures/cape.png");
 

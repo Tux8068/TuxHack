@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class ClickGuiModule extends Module{
     public ClickGuiModule() {
-        super("ClickGUI", Category.Client);
+        super("ClickGUI", Category.CLIENT);
         setDrawn(false);
         setBind(Keyboard.KEY_P);
     }

@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class FakePlayer extends Module {
     public FakePlayer() {
-        super("FakePlayer", "Creates a fake player", Category.Misc);
+        super("FakePlayer", "Creates a fake player", Category.MISC);
     }
 
     /**

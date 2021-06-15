@@ -11,7 +11,7 @@ public class WeaknessAlert extends Module
     private boolean hasAnnounced;
 
     public WeaknessAlert() {
-        super("WeaknessAlert", Category.Chat);
+        super("WeaknessAlert", Category.CHAT);
         this.hasAnnounced = false;
     }
 

@@ -9,7 +9,7 @@ import java.io.File;
 
 public class DatabaseCounter extends Module {
     public DatabaseCounter() {
-        super("DatabaseCounter", "Displays how many databases you have loaded", Module.Category.Hud);
+        super("DatabaseCounter", "Displays how many databases you have loaded", Module.Category.HUD);
     }
 
     Setting.Integer r;
@@ -28,7 +28,7 @@ public class DatabaseCounter extends Module {
         y = registerInteger("Y", "yaa", 10, 0, 960);
         justnum = registerBoolean("JustNumber", "only displays the number of databases", false);
 
-        File file = new File(mc.gameDir + File.separator + "Vulcan" + File.separator + "Databases");
+        File file = new File(mc.gameDir + File.separator + "TuxHack" + File.separator + "Databases");
         if (!file.exists()) {
             file.mkdir();
         }
@@ -37,7 +37,7 @@ public class DatabaseCounter extends Module {
 
     public void onEnable() {
         dbs = 0;
-        File f = new File(mc.gameDir + File.separator + "Vulcan" + File.separator + "Databases");
+        File f = new File(mc.gameDir + File.separator + "TuxHack" + File.separator + "Databases");
         String[] files = f.list();
 
         for (String file : files) {

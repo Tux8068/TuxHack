@@ -48,7 +48,7 @@ public class Nametags extends Module
     }
 
     public Nametags() {
-        super("Nametags", Category.Render);
+        super("Nametags", Category.RENDER);
     }
     
 

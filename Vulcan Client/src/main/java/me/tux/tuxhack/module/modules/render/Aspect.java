@@ -12,7 +12,7 @@ public class Aspect extends Module {
     Setting.Double ratio;
 
     public Aspect() {
-        super("Aspect", "travis ontop", Category.Render);
+        super("Aspect", "travis ontop", Category.RENDER);
     }
 
     public boolean setup() {

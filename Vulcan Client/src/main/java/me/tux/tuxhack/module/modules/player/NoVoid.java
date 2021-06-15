@@ -11,7 +11,7 @@ public class NoVoid extends Module {
     private Object SPacketDisconnect;
 
     public NoVoid() {
-        super("NoVoid", "antivoid", Category.Movement);
+        super("NoVoid", "antivoid", Category.MOVEMENT);
     }
 
     Setting.Integer rubberband;

@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class ElytraFly extends Module {
     public ElytraFly() {
-        super("ElytraFly", Category.Movement);
+        super("ElytraFly", Category.MOVEMENT);
     }
 
     Setting.Double speed;

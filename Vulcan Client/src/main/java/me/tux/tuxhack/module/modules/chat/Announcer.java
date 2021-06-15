@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Announcer extends Module {
     public Announcer() {
-        super("Announcer", "announces what you do in chat", Category.Chat);
+        super("Announcer", "announces what you do in chat", Category.CHAT);
     }
 
     public static int blockBrokeDelay = 0;

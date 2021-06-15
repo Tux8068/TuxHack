@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class DiscordRPC extends Module {
     public DiscordRPC() {
-        super("DiscordRPC", "Displays a customisable RPC", Category.Client);
+        super("DiscordRPC", "Displays a customisable RPC", Category.CLIENT);
     }
 
    public static Setting.Mode logoMode;

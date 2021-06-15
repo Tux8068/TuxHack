@@ -23,5 +23,6 @@ public class Stopper extends Thread {
         SaveConfiguration.saveMacros();
         SaveConfiguration.saveMessages();
         SaveConfiguration.savePrefix();
+
     }
 }

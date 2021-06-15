@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 public class CombatInfo extends Module {
 
     public CombatInfo() {
-        super("CombatInfo", Category.Hud);
+        super("CombatInfo", Category.HUD);
     }
 
     /* displays ping, totem count, PLR, HTR and LBY
@@ -63,11 +63,11 @@ public class CombatInfo extends Module {
 
         ArrayList<String> Modes;
         Modes = new ArrayList<>();
-        Modes.add("VULCAN");
-        Modes.add("KAiKLiENT");
-        Modes.add("YoshiWare");
+        Modes.add("TuxHack");
+        Modes.add("t3xh3ck");
+        Modes.add("tukshack");
 
-        Mode = registerMode("Mode", "combatInfoMode", Modes, "VULCAN");
+        Mode = registerMode("Mode", "combatInfoMode", Modes, "t3xh3ck");
         return false;
     }
 
@@ -99,8 +99,8 @@ public class CombatInfo extends Module {
         this.surroundOffset = new BlockPos[]{new BlockPos(0, 0, -1), new BlockPos(1, 0, 0), new BlockPos(0, 0, 1), new BlockPos(-1, 0, 0)};
         final List<EntityPlayer> entities = mc.world.playerEntities.stream().filter(entityPlayer -> !Friends.isFriend(entityPlayer.getName())).collect(Collectors.toList());
 
-        Color on = new Color(0, 255, 0);
-        Color off = new Color(255, 0, 0);
+        Color on = new Color(0, 144, 255);
+        Color off = new Color(119, 0, 255);
 
 
         ClickGUI.color = new Color(ClickGuiModule.red.getValue(), ClickGuiModule.green.getValue(), ClickGuiModule.blue.getValue()).getRGB();

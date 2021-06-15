@@ -24,7 +24,7 @@ public class TotemCounter extends Module
     public Listener<PacketEvent.Receive> totemPopListener;
 
     public TotemCounter() {
-        super("PopCounter", Category.Chat);
+        super("PopCounter", Category.CHAT);
         this.popList = new HashMap<String, Integer>();
         final int[] popCounter = new int[1];
         final int[] newPopCounter = {0};

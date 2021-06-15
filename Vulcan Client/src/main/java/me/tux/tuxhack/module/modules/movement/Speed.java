@@ -39,7 +39,7 @@ public class Speed extends Module
     private final Listener<PlayerMoveEvent> listener;
 
     public Speed() {
-        super("Speed", Category.Movement);
+        super("Speed", Category.MOVEMENT);
         this.forward = 1;
         this.waitTimer = new Timer();
         final boolean b = false;

@@ -13,7 +13,7 @@ import java.awt.*;
 public class Inventory extends Module {
 
     public Inventory() {
-        super("Inventory", "Renders inventory GUI and items on screen.", Category.Hud);
+        super("Inventory", "Renders inventory GUI and items on screen.", Category.HUD);
     }
 
     Setting.Integer r;

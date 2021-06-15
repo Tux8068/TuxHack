@@ -13,6 +13,7 @@ public class CommandManager {
         commands = new ArrayList<>();
         addCommand(new ConfigCommand());
         addCommand(new BindCommand());
+        addCommand(new BedCommand());
         addCommand(new FontCommand());
         addCommand(new FriendCommand());
         addCommand(new EnemyCommand());
@@ -47,6 +48,6 @@ public class CommandManager {
                 }
             }
         });
-        if(!b) Command.sendClientMessage(ChatFormatting.GRAY + "Unknown command!");
+        if(!b) Command.sendClientMessage(ChatFormatting.GRAY + "Command failed! :(");
     }
 }

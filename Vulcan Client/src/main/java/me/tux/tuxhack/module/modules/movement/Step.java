@@ -21,7 +21,7 @@ public class Step extends Module {
 
 
     public Step() {
-        super("Step", "Lets you step up blocks", Category.Movement);
+        super("Step", "Lets you step up blocks", Category.MOVEMENT);
     }
 
     public boolean setup() {

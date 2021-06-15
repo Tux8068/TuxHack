@@ -4,6 +4,7 @@ import me.tux.tuxhack.event.events.RenderEvent;
 import me.tux.tuxhack.module.modules.hud.*;
 import me.tux.tuxhack.module.modules.chat.*;
 import me.tux.tuxhack.module.modules.movement.*;
+import me.tux.tuxhack.module.modules.world.AntiLevitate;
 import me.tux.tuxhack.util.RenderUtil;
 import me.tux.tuxhack.module.modules.client.*;
 import me.tux.tuxhack.module.modules.combat.*;
@@ -50,6 +51,7 @@ public class ModuleManager {
         //Movement
         addMod(new AquaGlide());
         addMod(new BoatTP());
+        addMod(new BoatFly());
         addMod(new ElytraFly());
         addMod(new GuiMove());
         addMod(new HoleTP());
@@ -59,7 +61,6 @@ public class ModuleManager {
         addMod(new Sprint());
         addMod(new Speed());
         addMod(new Step());
-        addMod(new NoFall());
         //Player
         addMod(new BlockPhase());
         addMod(new MountBypass());
@@ -92,6 +93,7 @@ public class ModuleManager {
         addMod(new Time());
         addMod(new Welcomer());
         addMod(new Coordinates());
+        addMod(new Compass());
         addMod(new Watermark());
         addMod(new CombatInfo());
         addMod(new TPS());
@@ -111,6 +113,7 @@ public class ModuleManager {
         addMod(new HoleESP());
         addMod(new Nametags());
         addMod(new SkyColor());
+        addMod(new Skeleton());
         addMod(new TextRadar());
         addMod(new Tracers());
         addMod(new RenderTweaks());
@@ -125,6 +128,7 @@ public class ModuleManager {
         addMod(new TotemCounter());
         addMod(new VisualRange());
         addMod(new WeaknessAlert());
+        addMod(new AntiLevitate());
     }
 
     public static void addMod(Module m){
@@ -141,7 +145,7 @@ public class ModuleManager {
 
     public static void onWorldRender(RenderWorldLastEvent event) {
 
-        Minecraft.getMinecraft().profiler.startSection("Vulcan");
+        Minecraft.getMinecraft().profiler.startSection("Tuxhack");
         Minecraft.getMinecraft().profiler.startSection("setup");
 
         GlStateManager.disableTexture2D();

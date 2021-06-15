@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class willy extends Module {
     public willy() {
-        super("willy", "funny willy lol", Category.Hud);
+        super("willy", "funny willy lol", Category.HUD);
     }
 
     Setting.Integer r;

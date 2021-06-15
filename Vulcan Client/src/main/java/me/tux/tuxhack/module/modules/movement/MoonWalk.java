@@ -6,7 +6,7 @@ import net.minecraft.block.material.Material;
 
 public class MoonWalk extends Module {
     public MoonWalk() {
-        super("MoonWalk", "Tux is Tux", Category.Movement);
+        super("MoonWalk", "Tux is Tux", Category.MOVEMENT);
     }
 
     Setting.Double poop;

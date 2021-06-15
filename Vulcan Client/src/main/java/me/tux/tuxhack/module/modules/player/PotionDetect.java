@@ -12,7 +12,7 @@ import java.util.List;
 
 public class PotionDetect extends Module {
     public PotionDetect() {
-        super("PotionDetect", "Notifies you when other players consume a potion", Category.Player);
+        super("PotionDetect", "Notifies you when other players consume a potion", Category.PLAYER);
     }
 
     /**

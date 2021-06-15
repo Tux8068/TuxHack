@@ -4,7 +4,7 @@ import me.tux.tuxhack.module.Module;
 
 public class memory extends Module {
     public memory() {
-        super( "Memory", "Displays memory usage", Category.Hud);
+        super( "Memory", "Displays memory usage", Category.HUD);
     }
 
     public void onRender() {

@@ -15,7 +15,7 @@ public class ping extends Module {
     Setting.Integer y;
 
     public ping() {
-        super("Ping", "ping", Category.Hud);
+        super("Ping", "ping", Category.HUD);
     }
 
     public boolean setup() {

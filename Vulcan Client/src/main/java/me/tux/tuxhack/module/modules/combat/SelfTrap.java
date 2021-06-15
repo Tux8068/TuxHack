@@ -46,7 +46,7 @@ public class SelfTrap extends Module {
     private BlockPos basePos;
 
     public SelfTrap() {
-        super("Selftrap", "surround", Category.Combat);
+        super("Selftrap", "surround", Category.COMBAT);
     }
 
     public String getDisplayInfo() {

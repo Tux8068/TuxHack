@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import java.util.ArrayList;
 
 public class AutoTotem extends Module {
-	public AutoTotem(){super("AutoTotem", "Automatically moves a totem to your offhand", Category.Combat);}
+	public AutoTotem(){super("AutoTotem", "Automatically moves a totem to your offhand", Category.COMBAT);}
 
 	int totems;
 	boolean moving = false;

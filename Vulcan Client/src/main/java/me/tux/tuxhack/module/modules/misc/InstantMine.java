@@ -39,7 +39,7 @@ public class InstantMine extends Module {
     private final DecimalFormat format = new DecimalFormat("##.00#");
 
     public InstantMine(){
-        super("InstantMine", "InstantMines blocks using packets", Category.Misc);
+        super("InstantMine", "InstantMines blocks using packets", Category.MISC);
     }
 
     public static float getTpsFactor() { return 20.0F / TPS; }

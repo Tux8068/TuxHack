@@ -19,7 +19,7 @@ public class Watermark extends Module {
     Setting.Boolean onion;
 
     public Watermark() {
-        super("Watermark", "displays the modname and ver (optional)", Category.Hud); }
+        super("Watermark", "displays the modname and ver (optional)", Category.HUD); }
 
     public boolean setup() {
         ArrayList<String> Modes;
@@ -34,12 +34,12 @@ public class Watermark extends Module {
         b = registerInteger("Blue", "blue", 255, 0, 255);
         x = registerInteger("X", "xWaternark", 1, 0, 1280);
         y = registerInteger("Y", "yWatermark", 1, 0, 960);
-        onion = registerBoolean("OnionMode", "onion", false);
+        onion = registerBoolean("TuxMode", "Tux", false);
         return false;
     }
     public void onRender() {
         if (onion.getValue()) {
-            TuxHack.fontRenderer.drawStringWithShadow("OnionWareMc V1 | " + getDebugFPS() + " | " + mc.player.getName() , x.getValue(), y.getValue(), new Color(r.getValue(), g.getValue(), b.getValue(), 255).getRGB());
+            TuxHack.fontRenderer.drawStringWithShadow("TuxHack  1.5 | " + getDebugFPS() + " | " + mc.player.getName() , x.getValue(), y.getValue(), new Color(r.getValue(), g.getValue(), b.getValue(), 255).getRGB());
         }else {
             TuxHack.fontRenderer.drawStringWithShadow(mode.getValue() , x.getValue(), y.getValue(), new Color(r.getValue(), g.getValue(), b.getValue(), 255).getRGB());
         }

@@ -1,21 +1,27 @@
+// 
+// Decompiled by Procyon v0.5.36
+// 
+
 package me.tux.tuxhack.module.modules.client;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
-import me.tux.tuxhack.module.Module;
-import me.tux.tuxhack.setting.Setting;
-
+import java.util.List;
 import java.util.ArrayList;
+import me.tux.tuxhack.setting.Setting;
+import me.tux.tuxhack.module.Module;
 
-public class CommandColor extends Module {
-    public CommandColor() {
-        super("CommandColor", Category.Client);
-    }
-
+public class CommandColor extends Module
+{
     public static Setting.Mode CommandColor;
     public static Setting.Mode BracketColor;
-
+    
+    public CommandColor() {
+        super("CommandColor", Category.CLIENT);
+    }
+    
+    @Override
     public boolean setup() {
-        ArrayList<String> colors = new ArrayList<>();
+        final ArrayList<String> colors = new ArrayList<String>();
         colors.add("Black");
         colors.add("Dark Green");
         colors.add("Dark Red");
@@ -32,7 +38,7 @@ public class CommandColor extends Module {
         colors.add("Aqua");
         colors.add("Light Purple");
         colors.add("White");
-        ArrayList<String> brackets = new ArrayList<>();
+        final ArrayList<String> brackets = new ArrayList<String>();
         brackets.add("Black");
         brackets.add("Dark Green");
         brackets.add("Dark Red");
@@ -49,113 +55,112 @@ public class CommandColor extends Module {
         brackets.add("Aqua");
         brackets.add("Light Purple");
         brackets.add("White");
-        CommandColor = registerMode("Text", "Color", colors, "Aqua");
-        BracketColor = registerMode("Brackets", "BracketColor", brackets, "Gold");
+        me.tux.tuxhack.module.modules.client.CommandColor.CommandColor = this.registerMode("Text", "Color", colors, "Aqua");
+        me.tux.tuxhack.module.modules.client.CommandColor.BracketColor = this.registerMode("Brackets", "BracketColor", brackets, "Light Purple");
         return false;
     }
-
-    public static ChatFormatting getTextColor(){
-        if (CommandColor.getValue().equalsIgnoreCase("Black")){
+    
+    public static ChatFormatting getTextColor() {
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Black")) {
             return ChatFormatting.BLACK;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Green")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Green")) {
             return ChatFormatting.DARK_GREEN;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Red")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Red")) {
             return ChatFormatting.DARK_RED;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Gold")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Gold")) {
             return ChatFormatting.GOLD;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Gray")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Gray")) {
             return ChatFormatting.DARK_GRAY;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Green")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Green")) {
             return ChatFormatting.GREEN;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Red")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Red")) {
             return ChatFormatting.RED;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Yellow")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Yellow")) {
             return ChatFormatting.YELLOW;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Blue")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Blue")) {
             return ChatFormatting.DARK_BLUE;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Aqua")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Aqua")) {
             return ChatFormatting.DARK_AQUA;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Dark Purple")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Dark Purple")) {
             return ChatFormatting.DARK_PURPLE;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Gray")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Gray")) {
             return ChatFormatting.GRAY;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Blue")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Blue")) {
             return ChatFormatting.BLUE;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Light Purple")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Light Purple")) {
             return ChatFormatting.LIGHT_PURPLE;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("White")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("White")) {
             return ChatFormatting.WHITE;
         }
-        if (CommandColor.getValue().equalsIgnoreCase("Aqua")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.CommandColor.getValue().equalsIgnoreCase("Aqua")) {
             return ChatFormatting.AQUA;
         }
         return null;
     }
-
-    public static ChatFormatting getBrackets(){
-        if (BracketColor.getValue().equalsIgnoreCase("Black")){
+    
+    public static ChatFormatting getBrackets() {
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Black")) {
             return ChatFormatting.BLACK;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Green")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Green")) {
             return ChatFormatting.DARK_GREEN;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Red")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Red")) {
             return ChatFormatting.DARK_RED;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Gold")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Gold")) {
             return ChatFormatting.GOLD;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Gray")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Gray")) {
             return ChatFormatting.DARK_GRAY;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Green")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Green")) {
             return ChatFormatting.GREEN;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Red")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Red")) {
             return ChatFormatting.RED;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Yellow")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Yellow")) {
             return ChatFormatting.YELLOW;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Blue")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Blue")) {
             return ChatFormatting.DARK_BLUE;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Aqua")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Aqua")) {
             return ChatFormatting.DARK_AQUA;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Dark Purple")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Dark Purple")) {
             return ChatFormatting.DARK_PURPLE;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Gray")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Gray")) {
             return ChatFormatting.GRAY;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Blue")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Blue")) {
             return ChatFormatting.BLUE;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Light Purple")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Light Purple")) {
             return ChatFormatting.LIGHT_PURPLE;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("White")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("White")) {
             return ChatFormatting.WHITE;
         }
-        if (BracketColor.getValue().equalsIgnoreCase("Aqua")){
+        if (me.tux.tuxhack.module.modules.client.CommandColor.BracketColor.getValue().equalsIgnoreCase("Aqua")) {
             return ChatFormatting.AQUA;
         }
         return null;
     }
-
 }

@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class AntiAim extends Module {
     public AntiAim() {
-        super("AntiAim", "Makes it hard to target you", Category.Misc);
+        super("AntiAim", "Makes it hard to target you", Category.MISC);
         }
 
     public String getDisplayInfo() {

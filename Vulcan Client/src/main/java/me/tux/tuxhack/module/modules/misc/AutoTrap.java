@@ -52,7 +52,7 @@ public class AutoTrap extends Module {
     private Setting.Integer timeoutTicks;
 
     public AutoTrap() {
-        super("AutoTrap", "Traps Players In Obsidian", Category.Combat);
+        super("AutoTrap", "Traps Players In Obsidian", Category.COMBAT);
         this.playerHotbarSlot = -1;
         this.lastHotbarSlot = -1;
         this.delayStep = 0;

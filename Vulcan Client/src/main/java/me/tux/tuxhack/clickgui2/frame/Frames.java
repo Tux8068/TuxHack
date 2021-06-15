@@ -1,22 +1,22 @@
 package me.tux.tuxhack.clickgui2.frame;
 
 import me.tux.tuxhack.clickgui2.ClickGUI2;
-import me.tux.tuxhack.TuxHack;
-import me.tux.tuxhack.module.Module;
-import me.tux.tuxhack.module.ModuleManager;
+import org.lwjgl.input.Mouse;
 import me.tux.tuxhack.module.modules.client.ClickGuiModule;
-import me.tux.tuxhack.module.modules.client.Rainbow;
+import me.tux.tuxhack.TuxHack;
 import me.tux.tuxhack.util.font.FontUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
-import org.lwjgl.input.Mouse;
-
-import java.awt.*;
+import me.tux.tuxhack.module.modules.client.Rainbow;
+import net.minecraft.client.gui.FontRenderer;
+import java.util.Iterator;
+import me.tux.tuxhack.module.ModuleManager;
+import net.minecraft.client.Minecraft;
+import me.tux.tuxhack.module.Module;
 import java.util.ArrayList;
 
-public class Frames {
+public class Frames
+{
     public ArrayList<Component> guicomponents;
     public Module.Category category;
     private final int width;
@@ -32,47 +32,36 @@ public class Frames {
     int centeredNameCoords;
     boolean font;
     int rainbowOffset;
-
-    //dont use
     int buttonHeight;
-
     public int buttonHeightProper;
-
     int mouseX;
     int mouseY;
-
     boolean hovering;
-
     int animation;
+    Minecraft mc;
 
-    Minecraft mc = Minecraft.getMinecraft();
-
-    public Frames(final Module.Category catg){
+    public Frames(final Module.Category catg) {
+        this.mc = Minecraft.getMinecraft();
         this.guicomponents = new ArrayList<Component>();
         this.category = catg;
         this.open = true;
         this.isDragging = false;
         this.x = 10;
-        this.y = 34;
+        this.y = 60;
         this.dragX = 0;
-        this.width = 100;
-        this.barHeight = 16;
+        this.width = 85;
+        this.barHeight = 15;
         int tY = this.barHeight;
         this.nameWidth = 0;
         this.centeredNameCoords = 0;
         this.rainbowOffset = 0;
-
         this.buttonHeight = 0;
         this.buttonHeightProper = 0;
-
         this.mouseX = 0;
         this.mouseY = 0;
-
         this.hovering = false;
-
         this.animation = 50;
-
-        for (final Module mod : ModuleManager.getModulesInCategory(catg)){
+        for (final Module mod : ModuleManager.getModulesInCategory(catg)) {
             final Buttons devmodButton = new Buttons(mod, this, tY);
             this.guicomponents.add(devmodButton);
             tY += 16;
@@ -88,11 +77,11 @@ public class Frames {
         return this.width;
     }
 
-    public int getX(){
+    public int getX() {
         return this.x;
     }
 
-    public int getY(){
+    public int getY() {
         return this.y;
     }
 
@@ -104,109 +93,93 @@ public class Frames {
         this.y = newY;
     }
 
-    public void renderGUIFrame(final FontRenderer fontRenderer){
-
-        // this part deals with the animation, so if your mouse is hovering, it sets the brightness but animates it
-
-        this.hovering = isWithinFrame(mouseX, mouseY);
-
-        if (this.hovering && animation > 0){
-            animation -= 2;
+    public void renderGUIFrame(final FontRenderer fontRenderer) {
+        this.hovering = this.isWithinFrame(this.mouseX, this.mouseY);
+        if (this.hovering && this.animation > 0) {
+            this.animation -= 2;
         }
-
-        if (!this.hovering && animation < 50){
-            animation += 2;
+        if (!this.hovering && this.animation < 50) {
+            this.animation += 2;
         }
-
-        // this part does the rendering for the frame, starts by setting the texture as the rainbow pic, then it renders it where it should go, and it animates by using a variable thats always going up, i then render the outline, center the title, and render the string
-
-        rainbowOffset = Rainbow.getRainbowOffset();
-        mc.renderEngine.bindTexture(new ResourceLocation("minecraft:rainbow.png"));
-        Renderer.renderImage(this.x - 1, this.y - 1, this.x + 1, this.y + this.rainbowOffset, this.width + 1, this.barHeight, 1920f, 1080f);
+        this.rainbowOffset = Rainbow.getRainbowOffset();
+        this.mc.renderEngine.bindTexture(new ResourceLocation("minecraft:rainbow.png"));
+        Renderer.renderImage(this.x - 1, this.y - 1, this.x + 1, this.y + this.rainbowOffset, this.width + 1, this.barHeight, 1920.0f, 1080.0f);
         GlStateManager.pushMatrix();
-        Renderer.RenderBoxOutline(3,this.x - 1, this.y - 1, this.x + this.width, this.y + this.barHeight - 1, new Color(0, 0, 0)); // custom outline colour soon?!?!?!
         this.nameWidth = FontUtils.getStringWidth(false, this.category.name());
-        this.centeredNameCoords = (this.width - nameWidth) / 2;
+        this.centeredNameCoords = (this.width - this.nameWidth) / 2;
         GlStateManager.popMatrix();
-        if(ModuleManager.isModuleEnabled("CustomFont") == true) TuxHack.fontRenderer.drawStringWithShadow(this.category.name(), (float)(this.x + 2), (float)(this.y + 3), ClickGuiModule.color);
-        else
-        FontUtils.drawStringWithShadow(false, this.category.name(), x + 2, y + 3, Renderer.getFontColor(this.hovering, this.animation).getRGB());
-
-        // renders module buttons
-
-        if (this.open && !this.guicomponents.isEmpty()){
-            for (final Component component : this.guicomponents){
-                component.renderComponent();
-
-                buttonHeight += component.getButtonHeight();
-            }
-            buttonHeightProper = buttonHeight;
-            buttonHeight = 0;
+        if (ModuleManager.isModuleEnabled("CustomFont")) {
+            TuxHack.fontRenderer.drawStringWithShadow(this.category.name(), (float)(this.x + 2), (float)(this.y + 3), ClickGuiModule.color);
         }
-
+        else {
+            FontUtils.drawStringWithShadow(false, this.category.name(), this.x + 2, this.y + 3, Renderer.getFontColor(this.hovering, this.animation).getRGB());
+        }
+        if (this.open && !this.guicomponents.isEmpty()) {
+            for (final Component component : this.guicomponents) {
+                component.renderComponent();
+                this.buttonHeight += component.getButtonHeight();
+            }
+            this.buttonHeightProper = this.buttonHeight;
+            this.buttonHeight = 0;
+        }
     }
 
     public int getRainbowOffset() {
-        return rainbowOffset;
+        return this.rainbowOffset;
     }
 
-    public int getAnimation(){
-        return animation;
+    public int getAnimation() {
+        return this.animation;
     }
 
     public boolean isHovering() {
-        return hovering;
+        return this.hovering;
     }
 
-    public void setHovering(boolean hovering) {
+    public void setHovering(final boolean hovering) {
         this.hovering = hovering;
     }
 
     public int getMouseX() {
-        return mouseX;
+        return this.mouseX;
     }
 
     public int getMouseY() {
-        return mouseY;
+        return this.mouseY;
     }
 
-    public void updatePosition(final int mouseX, final int mouseY){
-        if (this.isDragging){
+    public void updatePosition(final int mouseX, final int mouseY) {
+        if (this.isDragging) {
             this.setX(mouseX - this.dragX);
             this.setY(mouseY - this.dragY);
         }
-
         this.mouseX = mouseX;
         this.mouseY = mouseY;
     }
 
-    public boolean isWithinHeader(final int x, final int y){
+    public boolean isWithinHeader(final int x, final int y) {
         return x >= this.x && x <= this.x + this.width && y >= this.y - 1 && y <= this.y + this.barHeight + 1;
     }
 
-    public boolean isWithinFrame(final int x, final int y){
-        if (isWithinHeader(mouseX, mouseY)){
-            return true;
-        } else if (x >= this.x && x <= this.x + this.width && y >= this.y - 1 && y <= this.y + this.barHeight + this.buttonHeightProper){
-            return true;
-        } else return false;
+    public boolean isWithinFrame(final int x, final int y) {
+        return this.isWithinHeader(this.mouseX, this.mouseY) || (x >= this.x && x <= this.x + this.width && y >= this.y - 1 && y <= this.y + this.barHeight + this.buttonHeightProper);
     }
 
-    public void setDrag(final boolean drag){
+    public void setDrag(final boolean drag) {
         this.isDragging = drag;
     }
 
-    public void setOpen(final boolean open){
+    public void setOpen(final boolean open) {
         this.open = open;
     }
 
-    public boolean isOpen(){
+    public boolean isOpen() {
         return this.open;
     }
 
-    public void refresh(){
+    public void refresh() {
         int off = this.barHeight;
-        for (final Component comp : this.guicomponents){
+        for (final Component comp : this.guicomponents) {
             comp.setOff(off);
             off += comp.getHeight();
         }
@@ -214,16 +187,17 @@ public class Frames {
     }
 
     public void updateMouseWheel() {
-        int scrollWheel = Mouse.getDWheel();
+        final int scrollWheel = Mouse.getDWheel();
         for (final Frames frames : ClickGUI2.frames) {
             if (scrollWheel < 0) {
                 frames.setY(frames.getY() - 5);
             }
-            else if (scrollWheel > 0) {
+            else {
+                if (scrollWheel <= 0) {
+                    continue;
+                }
                 frames.setY(frames.getY() + 5);
             }
         }
     }
-
-
 }

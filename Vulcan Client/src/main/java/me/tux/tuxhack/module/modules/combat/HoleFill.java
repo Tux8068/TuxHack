@@ -44,7 +44,7 @@ public class HoleFill extends Module {
     private int waitCounter;
 
     public HoleFill() {
-        super("HoleFill", Category.Combat);
+        super("HoleFill", Category.COMBAT);
         this.holes = new ArrayList<BlockPos>();
         this.obbyonly = Arrays.asList(Blocks.OBSIDIAN);
         this.bothonly = Arrays.asList(Blocks.OBSIDIAN, Blocks.ENDER_CHEST);

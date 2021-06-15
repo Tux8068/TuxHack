@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class Time extends Module {
     public Time() {
-        super("Time", "Displays the time", Category.Hud);
+        super("Time", "Displays the time", Category.HUD);
     }
 
     Setting.Mode timeFormat;

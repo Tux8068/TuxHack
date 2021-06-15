@@ -23,7 +23,7 @@ public class TPS extends Module {
     Setting.Integer y;
 
     public TPS() {
-        super("TPS", "tps", Category.Hud); }
+        super("TPS", "tps", Category.HUD); }
 
     public boolean setup() {
         ArrayList<String> tpsModes;

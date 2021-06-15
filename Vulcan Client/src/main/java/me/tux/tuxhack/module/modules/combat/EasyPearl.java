@@ -7,7 +7,7 @@ import net.minecraft.util.EnumHand;
 
 public class EasyPearl extends Module {
     public EasyPearl() {
-        super("EasyPearl", "Throws a pearl on toggle", Category.Combat);
+        super("EasyPearl", "Throws a pearl on toggle", Category.COMBAT);
     }
 
     int oldSlot = 0;

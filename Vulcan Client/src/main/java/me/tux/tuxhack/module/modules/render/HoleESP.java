@@ -39,7 +39,7 @@ public class HoleESP extends Module
     private ConcurrentHashMap<BlockPos, Boolean> safeHoles;
 
     public HoleESP() {
-        super("HoleESP", Category.Render);
+        super("HoleESP", Category.RENDER);
         this.surroundOffset = new BlockPos[] { new BlockPos(0, -1, 0), new BlockPos(0, 0, -1), new BlockPos(1, 0, 0), new BlockPos(0, 0, 1), new BlockPos(-1, 0, 0) };
     }
 

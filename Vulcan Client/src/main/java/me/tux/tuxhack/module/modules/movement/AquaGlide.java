@@ -18,7 +18,7 @@ public class AquaGlide extends Module
     Setting.Double blocks;
     
     public AquaGlide() {
-        super("AquaGlide", "AquaGlide allows you to fall in water quickly", Category.Movement);
+        super("AquaGlide", "AquaGlide allows you to fall in water quickly", Category.MOVEMENT);
     }
     
     @Override

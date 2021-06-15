@@ -18,7 +18,7 @@ import net.minecraft.util.EnumHand;
 
 public class GhostEXP extends Module {
     public GhostEXP() {
-        super("GhostEXP", "EXP's with your third arm.", Category.Combat);
+        super("GhostEXP", "EXP's with your third arm.", Category.COMBAT);
     }
 
     Setting.Integer takeOffVal;

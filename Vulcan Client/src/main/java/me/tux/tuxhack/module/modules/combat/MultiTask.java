@@ -10,7 +10,7 @@ import net.minecraft.util.math.RayTraceResult;
 
 public class MultiTask extends Module {
     public MultiTask() {
-        super("MultiTask", "Allows you to do 2 actions", Category.Combat);
+        super("MultiTask", "Allows you to do 2 actions", Category.COMBAT);
     }
 
     @Override

@@ -2,7 +2,15 @@ package me.tux.tuxhack.module.modules.hud;
 
 import me.tux.tuxhack.module.Module;
 import me.tux.tuxhack.setting.Setting;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Logo extends Module {
 
@@ -25,10 +33,10 @@ public class Logo extends Module {
     }
 
     public Logo() {
-        super("Logo", "Displays a Logo on screen!", Category.Hud);
+        super("Logo", "Displays a Logo on screen!", Category.HUD);
     }
 
- /*   @Override
+    @Override
     public void onRender() {
 
 
@@ -74,6 +82,6 @@ public class Logo extends Module {
             ex.printStackTrace();
             return null;
         }
-    }*/
+    }
 
 }

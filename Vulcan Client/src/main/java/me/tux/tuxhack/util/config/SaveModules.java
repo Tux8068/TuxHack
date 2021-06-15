@@ -20,6 +20,7 @@ public class SaveModules {
         saveMisc();
         saveMovement();
         saveRender();
+        saveWorld();
     }
 
     //saves combat-related modules
@@ -31,7 +32,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Combat.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Combat).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.COMBAT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -47,7 +48,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Combat.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Combat).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.COMBAT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -60,7 +61,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Combat.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Combat).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.COMBAT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -81,7 +82,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Player.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Player).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.PLAYER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -97,7 +98,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Player.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Player).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.PLAYER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -110,7 +111,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Player.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Player).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.PLAYER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -131,7 +132,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Client.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Client).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.CLIENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -147,7 +148,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Client.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Client).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.CLIENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -160,7 +161,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Client.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Client).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.CLIENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -181,7 +182,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Misc.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Misc).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MISC).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -197,7 +198,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Misc.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Misc).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MISC).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -210,7 +211,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Misc.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Misc).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MISC).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -231,7 +232,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Movement.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Movement).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MOVEMENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -247,7 +248,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Movement.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Movement).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MOVEMENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -260,7 +261,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Movement.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Movement).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.MOVEMENT).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -281,7 +282,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Render.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Render).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.RENDER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -297,7 +298,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Render.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Render).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.RENDER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -310,7 +311,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Render.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Render).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.RENDER).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {
@@ -331,7 +332,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Hud.getAbsolutePath(), "Value.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Hud).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.HUD).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.DOUBLE) {
@@ -347,7 +348,7 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Hud.getAbsolutePath(), "Boolean.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Hud).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.HUD).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.BOOLEAN) {
@@ -360,7 +361,55 @@ public class SaveModules {
         try {
             file = new File(SaveConfiguration.Hud.getAbsolutePath(), "String.json");
             out = new BufferedWriter(new FileWriter(file));
-            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.Hud).iterator();
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.HUD).iterator();
+            while(var3.hasNext()) {
+                i = (Setting)var3.next();
+                if (i.getType() == Setting.Type.MODE) {
+                    out.write(i.getConfigName() + ":" + ((Setting.Mode) i).getValue() + ":" + i.getParent().getName() + "\r\n");
+                }
+            }
+            out.close();
+        } catch (Exception var5) {
+        }
+    }
+    public void saveWorld(){
+        File file;
+        BufferedWriter out;
+        Iterator var3;
+        Setting i;
+        try {
+            file = new File(SaveConfiguration.Hud.getAbsolutePath(), "Value.json");
+            out = new BufferedWriter(new FileWriter(file));
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.HUD).iterator();
+            while(var3.hasNext()) {
+                i = (Setting)var3.next();
+                if (i.getType() == Setting.Type.DOUBLE) {
+                    out.write(i.getConfigName() + ":" +((Setting.Double) i).getValue() + ":" + i.getParent().getName() + "\r\n");
+                }
+                if (i.getType() == Setting.Type.INT) {
+                    out.write(i.getConfigName() + ":" +((Setting.Integer) i).getValue() + ":" + i.getParent().getName() + "\r\n");
+                }
+            }
+            out.close();
+        } catch (Exception var7) {
+        }
+        try {
+            file = new File(SaveConfiguration.Hud.getAbsolutePath(), "Boolean.json");
+            out = new BufferedWriter(new FileWriter(file));
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.WORLD).iterator();
+            while(var3.hasNext()) {
+                i = (Setting)var3.next();
+                if (i.getType() == Setting.Type.BOOLEAN) {
+                    out.write(i.getConfigName() + ":" + ((Setting.Boolean) i).getValue() + ":" + i.getParent().getName() + "\r\n");
+                }
+            }
+            out.close();
+        } catch (Exception var6) {
+        }
+        try {
+            file = new File(SaveConfiguration.Hud.getAbsolutePath(), "String.json");
+            out = new BufferedWriter(new FileWriter(file));
+            var3 = TuxHack.getInstance().settingsManager.getSettingsByCategory(Module.Category.WORLD).iterator();
             while(var3.hasNext()) {
                 i = (Setting)var3.next();
                 if (i.getType() == Setting.Type.MODE) {

@@ -27,7 +27,7 @@ import java.util.*;
 public class ShulkerAura extends Module {
 
     public ShulkerAura(){
-        super("ShulkerAura", "Uses shulkers to push crystals into enemies", Category.Combat);
+        super("ShulkerAura", "Uses shulkers to push crystals into enemies", Category.COMBAT);
     }
 
     public  final List<Block> blackList = Arrays.asList(Blocks.ENDER_CHEST, Blocks.CHEST, Blocks.TRAPPED_CHEST, Blocks.CRAFTING_TABLE, Blocks.ANVIL, Blocks.BREWING_STAND, Blocks.HOPPER, Blocks.DROPPER, Blocks.DISPENSER, Blocks.TRAPDOOR, Blocks.ENCHANTING_TABLE);

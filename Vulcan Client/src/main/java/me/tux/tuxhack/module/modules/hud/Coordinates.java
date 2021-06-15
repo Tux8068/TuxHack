@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Coordinates extends Module {
     public Coordinates() {
-        super("Coordinates", "Displays coordinates on screen", Category.Hud);
+        super("Coordinates", "Displays coordinates on screen", Category.HUD);
     }
 
     Setting.Mode spaces;

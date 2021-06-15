@@ -165,13 +165,16 @@ public class Module {
     }
 
     public enum Category{
-        Combat,
-        Player,
-        Movement,
-        Chat,
-        Misc,
-        Render,
-        Hud,
-        Client
+        COMBAT,
+        CHAT,
+        MISC,
+        MOVEMENT,
+        PLAYER,
+        RENDER,
+        WORLD,
+        CLIENT,
+        HUD
+
+
     }
 }

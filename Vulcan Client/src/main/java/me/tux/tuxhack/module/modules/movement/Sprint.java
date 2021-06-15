@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Sprint extends Module {
     public Sprint() {
-        super("Sprint", "Makes you sprint", Category.Movement);
+        super("Sprint", "Makes you sprint", Category.MOVEMENT);
     }
 
     Setting.Mode mode;

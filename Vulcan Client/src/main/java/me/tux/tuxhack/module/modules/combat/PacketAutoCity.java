@@ -42,7 +42,7 @@ public class PacketAutoCity extends Module
     Setting.Mode BlockPOPColour;
     
     public PacketAutoCity() {
-        super("PacketCity", "automatically cities enimies using packets", Category.Combat);
+        super("PacketCity", "automatically cities enimies using packets", Category.COMBAT);
         this.mineTarget = null;
     }
     

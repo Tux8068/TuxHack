@@ -16,7 +16,7 @@ public class SkyColor extends Module
     Setting.Boolean rainbow;
 
     public SkyColor() {
-        super("SkyColor", "changes the sky", Category.Render);
+        super("SkyColor", "changes the sky", Category.WORLD);
         this.r = this.registerInteger("Red", "R", 255, 0, 255);
         this.g = this.registerInteger("Green", "G", 255, 0, 255);
         this.b = this.registerInteger("Blue", "B", 255, 0, 255);

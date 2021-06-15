@@ -43,7 +43,7 @@ public class SaveConfiguration {
     //Files inside the modules folder, houses module configs per category
 
     public SaveConfiguration(){
-        GameSenseDev = new File(mc.gameDir + File.separator + "Vulcan");
+        GameSenseDev = new File(mc.gameDir + File.separator + "TuxHack");
         if (!GameSenseDev.exists()){
             GameSenseDev.mkdirs();
         }

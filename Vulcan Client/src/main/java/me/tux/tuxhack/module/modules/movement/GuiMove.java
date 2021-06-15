@@ -9,7 +9,7 @@ import net.minecraft.client.gui.GuiChat;
 
 public class GuiMove extends Module {
     public GuiMove() {
-        super ("GuiMove", "Allows you to move in GUI's using arrow keys.", Category.Movement);
+        super ("GuiMove", "Allows you to move in GUI's using arrow keys.", Category.MOVEMENT);
     }
 
     private Minecraft mc = Minecraft.getMinecraft();

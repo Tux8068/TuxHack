@@ -44,7 +44,7 @@ public class PacketMine extends Module
     private final Listener<DamageBlockEvent> damageBlockEventListener;
     
     public PacketMine() {
-        super("PacketMine", "Mines blocks using packets", Category.Misc);
+        super("PacketMine", "Mines blocks using packets", Category.MISC);
         this.breakable = false;
         this.timer = new Timer();
         this.lastUpdate = -1L;

@@ -9,7 +9,7 @@ import net.minecraft.network.play.client.CPacketUseEntity;
 
 public class MountBypass extends Module {
     public MountBypass() {
-        super("MountBypass", "Forcefully mounts chests on entities", Category.Player);
+        super("MountBypass", "Forcefully mounts chests on entities", Category.PLAYER);
     }
 
     @EventHandler

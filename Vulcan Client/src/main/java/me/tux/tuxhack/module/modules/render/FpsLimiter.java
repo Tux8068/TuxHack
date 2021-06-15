@@ -11,7 +11,7 @@ public class FpsLimiter extends Module {
     */
 
     public FpsLimiter() {
-        super("FPSLimiter", "fpsLimiter", Category.Client);
+        super("FPSLimiter", "fpsLimiter", Category.RENDER);
     }
 
     public boolean setup() {

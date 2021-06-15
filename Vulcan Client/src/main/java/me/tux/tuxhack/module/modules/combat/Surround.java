@@ -45,7 +45,7 @@ public class Surround extends Module {
     private BlockPos basePos;
 
     public Surround() {
-        super("Surround", "surround", Category.Combat);
+        super("Surround", "surround", Category.COMBAT);
     }
 
 

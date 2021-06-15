@@ -11,7 +11,7 @@ package me.tux.tuxhack.module.modules.combat;
 
         public class AutoArmour extends Module {
         public AutoArmour() {
-        super("AutoArmour","Smarter ArmorSwitch",Category.Combat);
+        super("AutoArmour","Smarter ArmorSwitch",Category.COMBAT);
         }
 
         Setting.Integer lowdura;

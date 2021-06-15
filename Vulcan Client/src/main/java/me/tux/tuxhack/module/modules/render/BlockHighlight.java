@@ -18,7 +18,7 @@ import java.awt.*;
 
 public class BlockHighlight extends Module {
 	public BlockHighlight(){
-		super("BlockHighlight", Category.Render);
+		super("BlockHighlight", Category.RENDER);
 	}
 	
 	Setting.Integer w;

@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class AutoMend extends Module {
 
-    public AutoMend() { super("AutoMend", "Automatically mends your armor",Category.Combat); }
+    public AutoMend() { super("AutoMend", "Automatically mends your armor",Category.COMBAT); }
 
     int delay = 0;
 

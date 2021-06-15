@@ -32,7 +32,7 @@ public class ConfigCommand extends Command {
             TuxHack.loadModules.loadMisc();
             TuxHack.loadModules.loadCombat();
             TuxHack.loadModules.loadMovement();
-            TuxHack.loadModules.loadPlayer();
+            TuxHack.loadModules.loadPLAYER();
             TuxHack.loadModules.loadRender();
             Command.sendClientMessage(ChatFormatting.BOLD + "Loaded Config");
         }else if (args[0].equalsIgnoreCase("save")) {

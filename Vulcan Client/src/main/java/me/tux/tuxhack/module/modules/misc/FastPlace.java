@@ -8,7 +8,7 @@ import net.minecraft.item.ItemEndCrystal;
 import net.minecraft.item.ItemExpBottle;
 
 public class FastPlace extends Module {
-	public FastPlace(){super("FastPlace", "Increases your place speed", Category.Misc);}
+	public FastPlace(){super("FastPlace", "Increases your place speed", Category.MISC);}
 
 	Setting.Boolean exp;
 	Setting.Boolean crystals;

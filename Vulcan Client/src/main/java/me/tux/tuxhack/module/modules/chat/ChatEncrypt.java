@@ -9,7 +9,7 @@ import net.minecraft.network.play.client.CPacketChatMessage;
 
 
 public class ChatEncrypt extends Module{
-    public ChatEncrypt(){super("ChatEncrypt", "Hide da secrets", Module.Category.Chat);}
+    public ChatEncrypt(){super("ChatEncrypt", "Hide da secrets", Module.Category.CHAT);}
 
     @EventHandler
     private final Listener<PacketEvent.Send> listener = new Listener<>(event -> {

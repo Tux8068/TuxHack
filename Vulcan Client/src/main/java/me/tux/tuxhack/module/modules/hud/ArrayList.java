@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ArrayList extends Module {
     public ArrayList() {
-        super("ArrayList", "Displays a list of enabled modules", Category.Hud);
+        super("ArrayList", "Displays a list of enabled modules", Category.HUD);
     }
 
     /**
@@ -38,7 +38,7 @@ public class ArrayList extends Module {
 
         enabledModules.clear();
         for (Module module : ModuleManager.getModules()) {
-            if (ModuleManager.isModuleEnabled(module) && module.isDrawn() && module.getCategory() != Category.Client && module.getCategory() != Category.Hud)
+            if (ModuleManager.isModuleEnabled(module) && module.isDrawn() && module.getCategory() != Category.CLIENT && module.getCategory() != Category.HUD)
                 enabledModules.add(module);
         }
 

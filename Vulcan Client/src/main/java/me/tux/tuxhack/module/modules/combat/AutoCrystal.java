@@ -49,7 +49,7 @@ import java.util.stream.Collectors;
 
 public class AutoCrystal extends Module {
     public AutoCrystal() {
-        super("AutoCrystal", "Automatically places and breaks crystals to do damage", Category.Combat);
+        super("AutoCrystal", "Automatically places and breaks crystals to do damage", Category.COMBAT);
     }
 
     private BlockPos render;

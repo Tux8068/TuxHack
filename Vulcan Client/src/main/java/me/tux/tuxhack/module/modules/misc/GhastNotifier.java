@@ -25,7 +25,7 @@ public class GhastNotifier extends Module {
     private final Set<Entity> sShulker = new HashSet<>();
 
     public GhastNotifier() {
-        super("MobNotifier", "Messages you coordinates of mobs", Category.Misc);
+        super("MobNotifier", "Messages you coordinates of mobs", Category.MISC);
 
 
     }

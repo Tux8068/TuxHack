@@ -4,7 +4,7 @@ import me.tux.tuxhack.module.Module;
 import me.tux.tuxhack.setting.Setting;
 
 public class ReverseStep extends Module {
-    public ReverseStep() {super("ReverseStep", "Allows you to instantly step down blocks", Category.Movement);}
+    public ReverseStep() {super("ReverseStep", "Allows you to instantly step down blocks", Category.MOVEMENT);}
 
     Setting.Double height;
 

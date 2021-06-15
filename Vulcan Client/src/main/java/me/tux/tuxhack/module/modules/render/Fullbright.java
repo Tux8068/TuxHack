@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Fullbright extends Module {
     public Fullbright() {
-        super("Fullbright", "Brightens up your world", Category.Render);
+        super("Fullbright", "Brightens up your world", Category.RENDER);
     }
 
     Setting.Mode fullbrightMode;

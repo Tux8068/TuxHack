@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class ArmorNotification extends Module {
     public ArmorNotification() {
-        super("ArmorNotify", "Notifies you when you need to mend your armor", Category.Misc);
+        super("ArmorNotify", "Notifies you when you need to mend your armor", Category.MISC);
     }
 
     Setting.Integer x;

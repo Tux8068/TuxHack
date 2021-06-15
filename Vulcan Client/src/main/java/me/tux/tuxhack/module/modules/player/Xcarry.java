@@ -9,7 +9,7 @@ import net.minecraft.network.play.client.CPacketCloseWindow;
 
 public class Xcarry extends Module {
     public Xcarry() {
-        super("XCarry", "Lets you store items in crafting slots", Category.Player);
+        super("XCarry", "Lets you store items in crafting slots", Category.PLAYER);
     }
 
     @EventHandler

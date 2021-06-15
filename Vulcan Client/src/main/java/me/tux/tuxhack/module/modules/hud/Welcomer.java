@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Welcomer extends Module {
     public Welcomer() {
-        super("Welcomer", "Displays a welcome message", Category.Hud);
+        super("Welcomer", "Displays a welcome message", Category.HUD);
     }
 
     Setting.Integer r;

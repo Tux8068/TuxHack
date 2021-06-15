@@ -77,7 +77,7 @@ public class TuxHack {
      */
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        log.info("travis owns u and all");
+        log.info("TuxHack.funny");
     }
 
     /**

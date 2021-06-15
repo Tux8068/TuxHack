@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class WorldEffects extends Module {
     public WorldEffects() {
-        super("WorldEffects", "Removes world related rendering", Category.Render);
+        super("WorldEffects", "Removes world related rendering", Category.WORLD);
     }
 
     Setting.Boolean Negative;

@@ -12,7 +12,7 @@ package me.tux.tuxhack.module.modules.render;
         public class CockESP extends Module {
 
         public CockESP(){
-        super("PenisESP", "Makes u have many big pp", Category.Render);
+        super("PenisESP", "Makes u have many big pp", Category.RENDER);
         }
 
         private float pspin, pcumsize, pamount;

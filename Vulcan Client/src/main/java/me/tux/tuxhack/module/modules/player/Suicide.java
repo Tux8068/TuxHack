@@ -7,7 +7,7 @@ import net.minecraft.network.play.client.CPacketPlayer;
 
 public class Suicide extends Module {
     public Suicide() {
-        super("Suicide", "/kills you lol", Category.Player);
+        super("Suicide", "/kills you lol", Category.PLAYER);
     }
 
     public void onEnable() {

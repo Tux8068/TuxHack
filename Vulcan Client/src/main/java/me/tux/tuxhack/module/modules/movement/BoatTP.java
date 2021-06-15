@@ -19,7 +19,7 @@ import java.util.Comparator;
 
 public class BoatTP extends Module {
     public BoatTP() {
-        super("BoatTP", "Notifies you when you need to mend your armor", Category.Movement);
+        super("BoatTP", "Notifies you when you need to mend your armor", Category.MOVEMENT);
     }
     public KeyUpNotifier upKeyNotif = new KeyUpNotifier();
 

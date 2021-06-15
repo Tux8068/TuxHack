@@ -50,7 +50,7 @@ package me.tux.tuxhack.module.modules.combat;
             private boolean nowTop;
 
             public BedAura() {
-                super("BedAura", Category.Combat);
+                super("BedAura", Category.COMBAT);
                 this.playerHotbarSlot = -1;
                 this.lastHotbarSlot = -1;
                 this.bedSlot = -1;

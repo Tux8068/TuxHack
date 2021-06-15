@@ -13,7 +13,7 @@ import net.minecraft.util.math.BlockPos;
  */
 public class BowSpam extends Module {
     public BowSpam() {
-        super("BowSpam", "Spams your bow to do maximum damage!", Category.Combat);
+        super("BowSpam", "Spams your bow to do maximum damage!", Category.COMBAT);
     }
 
     Setting.Integer DELAY;

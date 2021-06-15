@@ -4,7 +4,7 @@ import me.tux.tuxhack.module.Module;
 
 public class AutoTPA extends Module {
     public AutoTPA() {
-        super("AutoTPA", "automatically /tpa's you to AnarchyBOT", Category.Chat);
+        super("AutoTPA", "automatically /tpa's you to AnarchyBOT", Category.CHAT);
     }
 
     public void onEnable() {

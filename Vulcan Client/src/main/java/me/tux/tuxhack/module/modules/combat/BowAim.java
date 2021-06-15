@@ -20,7 +20,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BowAim extends Module {
 
-    public BowAim() { super("BowAim", "makes your bow have aimbot",Category.Combat); }
+    public BowAim() { super("BowAim", "makes your bow have aimbot",Category.COMBAT); }
     
     private final List<EntityLivingBase> validTargets = new CopyOnWriteArrayList<>();
 

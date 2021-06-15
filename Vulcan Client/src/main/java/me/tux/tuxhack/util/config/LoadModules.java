@@ -17,14 +17,14 @@ public class LoadModules {
     public LoadModules(){
         loadHud();
         loadCombat();
-        loadPlayer();
+        loadPLAYER();
         loadClient();
         loadMisc();
         loadMovement();
         loadRender();
     }
 
-    //loads combat-related configs
+    //loads COMBAT-related configs
     public void loadCombat(){
         File file;
         FileInputStream fstream;
@@ -46,7 +46,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Combat)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.COMBAT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -73,7 +73,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Combat)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.COMBAT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -94,7 +94,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Combat)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.COMBAT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -108,7 +108,7 @@ public class LoadModules {
     }
 
     //loads exploit-related configs
-    public void loadPlayer(){
+    public void loadPLAYER(){
         File file;
         FileInputStream fstream;
         DataInputStream in;
@@ -129,7 +129,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Player)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.PLAYER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -156,7 +156,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Player)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.PLAYER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -177,7 +177,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Player)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.PLAYER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -212,7 +212,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Client)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.CLIENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -239,7 +239,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Client)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.CLIENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -260,7 +260,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Client)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.CLIENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -295,7 +295,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Misc)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MISC)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -322,7 +322,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Misc)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MISC)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -343,7 +343,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Misc)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MISC)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -378,7 +378,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Movement)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MOVEMENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -405,7 +405,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Movement)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MOVEMENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -426,7 +426,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Movement)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.MOVEMENT)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -461,7 +461,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Render)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.RENDER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -488,7 +488,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Render)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.RENDER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -509,7 +509,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Render)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.RENDER)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);
@@ -544,7 +544,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Hud)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.HUD)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndModConfig(configname, mm);
 
@@ -571,7 +571,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Hud)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.HUD)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Boolean) mod).setValue(java.lang.Boolean.parseBoolean(isOn));
@@ -592,7 +592,7 @@ public class LoadModules {
                 configname = curLine.split(":")[0];
                 isOn = curLine.split(":")[1];
                 m = curLine.split(":")[2];
-                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.Hud)) {
+                for(Module mm : ModuleManager.getModulesInCategory(Module.Category.HUD)) {
                     if (mm != null && mm.getName().equalsIgnoreCase(m)) {
                         mod = TuxHack.getInstance().settingsManager.getSettingByNameAndMod(configname, mm);
                         ((Setting.Mode) mod).setValue(isOn);

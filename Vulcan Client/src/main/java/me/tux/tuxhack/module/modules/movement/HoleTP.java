@@ -15,7 +15,7 @@ import net.minecraft.util.math.MathHelper;
 
 public class HoleTP extends Module {
     public HoleTP() {
-        super("HoleTP", "HoleTP :^)", Category.Movement);
+        super("HoleTP", "HoleTP :^)", Category.MOVEMENT);
     }
     private int packets;
     private boolean jumped;

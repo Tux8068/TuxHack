@@ -19,7 +19,7 @@ import java.util.List;
 
 public class BlockPhase extends Module {
         public BlockPhase() {
-            super("BlockPhase", "EZ MODE MODULE", Category.Player);
+            super("BlockPhase", "EZ MODE MODULE", Category.PLAYER);
         }
 
     Setting.Boolean debug,

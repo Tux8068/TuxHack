@@ -11,7 +11,7 @@ import net.minecraft.util.EnumHand;
 
 public class BowAnimations extends Module {
     public BowAnimations() {
-        super("BowAnimations", "BowAnimations", Category.Render);
+        super("BowAnimations", "BowAnimations", Category.RENDER);
     }
     public boolean setup(){
         return false;

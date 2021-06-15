@@ -5,7 +5,7 @@ import me.tux.tuxhack.setting.Setting;
 
 public class Zoom extends Module {
     public Zoom() {
-        super("Zoom", "Zooms In", Category.Render);
+        super("Zoom", "Zooms In", Category.RENDER);
     }
 
     Setting.Double fov;

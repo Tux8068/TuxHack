@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class TeamTux extends Module{
     public TeamTux(){
-        super("TeamTux", Category.Client);
+        super("TeamTux", Category.CLIENT);
     }
 
     public String getDisplayInfo() {

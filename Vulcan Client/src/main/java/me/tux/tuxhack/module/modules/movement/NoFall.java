@@ -1,66 +1,78 @@
 package me.tux.tuxhack.module.modules.movement;
 
 import me.tux.tuxhack.command.Command;
-import me.tux.tuxhack.event.events.PacketEvent;
-import me.tux.tuxhack.module.Module;
-import me.tux.tuxhack.setting.Setting;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockAir;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.entity.Entity;
+import me.tux.tuxhack.util.EntityUtil;
+import me.tux.tuxhack.setting.Setting;
+import me.tux.tuxhack.module.Module;
 
-public class NoFall extends Module {
+public class NoFall extends Module
+{
     Setting.Boolean twodelay;
     Setting.Integer tickDelay;
+    Setting.Integer blocksFromGround;
+    Setting.Integer waitTicks;
     Setting.Double speed;
     Setting.Boolean p;
     Setting.Boolean hh;
+    private int ticks;
+
     public NoFall() {
+        super("NoFall", "nofall, works on most servers", Category.MOVEMENT);
+        this.blocksFromGround = this.registerInteger("BlocksFromGround", "GroundBlocks", 1, 0, 10);
+        this.twodelay = this.registerBoolean("Delay", "2Delay", true);
+        this.tickDelay = this.registerInteger("TickDelay", "TickDelay", 2, 0, 40);
+        this.waitTicks = this.registerInteger("WaitTicks", "WaitTicks", 20, 0, 60);
+        this.speed = this.registerDouble("speed", "speed", 1.0, 0.1, 2.0);
+        this.p = this.registerBoolean("Freeze", "Freeze", true);
+        this.hh = this.registerBoolean("NoDamage", "NoDamage", true);
+    }
 
-        super("NoFall", "nofall", Category.Movement);
-
-        twodelay = registerBoolean("2Delay", "2Delay", true);
-        tickDelay = registerInteger("TickDelay", "TickDelay", 2, 0, 40);
-        speed = registerDouble("speed","speed",1,0.1,2);
-        p = registerBoolean("p","p", true);
-        hh = registerBoolean("hh","hh", true);
+    @Override
+    protected void onEnable() {
+        this.ticks = 0;
     }
 
     @Override
     public int onUpdate() {
-
-
-        mc.gameSettings.keyBindSneak.isKeyDown();
-        mc.getConnection().sendPacket(new CPacketPlayer.Position(mc.player.posX + mc.player.motionX, mc.player.posY - 80680, mc.player.posZ + mc.player.motionZ, true));
-        mc.getConnection().sendPacket(new CPacketPlayer.Position(mc.player.posX, mc.player.posY, mc.player.posZ, false));
-        mc.player.noClip = true;
-        if (tickDelay.getValue() > 0)
-            if (mc.player.ticksExisted % tickDelay.getValue() != 0 && twodelay.getValue()) return 0;
-        boolean yes = false;
-        mc.player.noClip = true;
-        if (yes)
-            mc.getConnection().sendPacket(new CPacketPlayer.Position(mc.player.posX + mc.player.motionX, mc.player.posY + (mc.player.posY < (hh.getValue() ? 1.1 : -0.98) ? (speed.getValue() / 100) : 0) + (mc.gameSettings.keyBindJump.isKeyDown() ? (speed.getValue() / 100) : 0) - (mc.gameSettings.keyBindSneak.isKeyDown() ? (speed.getValue() / 100) : 0), mc.player.posZ + mc.player.motionZ, false)); // mc.player.rotationYaw, mc.player.rotationPitch, false));
-        mc.player.noClip = true;
-        if (yes)
-            mc.getConnection().sendPacket(new CPacketPlayer.Position(mc.player.posX + mc.player.motionX, mc.player.posY - 42069, mc.player.posZ + mc.player.motionZ, true));
+        if (this.ticks > this.tickDelay.getValue()) {
+            this.disable();
+            return 0;
+        }
+        final BlockPos playerPos = EntityUtil.getPosition((Entity)NoFall.mc.player);
+        for (int i = 0; i < this.blocksFromGround.getValue(); ++i) {
+            if (NoFall.mc.world.getBlockState(new BlockPos((Vec3i)playerPos).down(i + 1)).getBlock() != Blocks.AIR) {
+                this.doThing();
+            }
+        }
         return 0;
     }
-    private boolean getAirBlocks(IBlockState blockState, BlockPos blockPos) {
-        if (blockState.getBlock() == Blocks.AIR) {
-            return false;
-        } else if (mc.player.getDistanceSq(blockPos) < 1.0D /*PUT YOUR SETTING VALUE HERE*/) {
-            return false;
-        } else if (mc.world.getBlockState(blockPos.up()).getBlock() == Blocks.AIR) {
-            return false;
+
+    private void doThing() {
+        ++this.ticks;
+        NoFall.mc.gameSettings.keyBindSneak.isKeyDown();
+        NoFall.mc.getConnection().sendPacket((Packet)new CPacketPlayer.Position(NoFall.mc.player.posX + NoFall.mc.player.motionX, NoFall.mc.player.posY - 80680.0, NoFall.mc.player.posZ + NoFall.mc.player.motionZ, true));
+        NoFall.mc.getConnection().sendPacket((Packet)new CPacketPlayer.Position(NoFall.mc.player.posX, NoFall.mc.player.posY, NoFall.mc.player.posZ, false));
+        NoFall.mc.player.noClip = true;
+        if (this.tickDelay.getValue() > 0 && NoFall.mc.player.ticksExisted % this.tickDelay.getValue() != 0 && this.twodelay.getValue()) {
+            return;
         }
-        return false;
+        final boolean yes = false;
+        NoFall.mc.player.noClip = true;
+        if (yes) {
+            NoFall.mc.getConnection().sendPacket((Packet)new CPacketPlayer.Position(NoFall.mc.player.posX + NoFall.mc.player.motionX, NoFall.mc.player.posY + ((NoFall.mc.player.posY < (this.hh.getValue() ? 1.1 : -0.98)) ? (this.speed.getValue() / 100.0) : 0.0) + (NoFall.mc.gameSettings.keyBindJump.isKeyDown() ? (this.speed.getValue() / 100.0) : 0.0) - (NoFall.mc.gameSettings.keyBindSneak.isKeyDown() ? (this.speed.getValue() / 100.0) : 0.0), NoFall.mc.player.posZ + NoFall.mc.player.motionZ, false));
+        }
+        NoFall.mc.player.noClip = true;
+        if (yes) {
+            NoFall.mc.getConnection().sendPacket((Packet)new CPacketPlayer.Position(NoFall.mc.player.posX + NoFall.mc.player.motionX, NoFall.mc.player.posY - 42069.0, NoFall.mc.player.posZ + NoFall.mc.player.motionZ, true));
+        }
+        if (this.p.getValue()) {}
+        Command.sendRawMessage(TextFormatting.AQUA + " " + TextFormatting.UNDERLINE + "You are now frosty :^)");
     }
-
-    }
-
-
-
-
-
+}

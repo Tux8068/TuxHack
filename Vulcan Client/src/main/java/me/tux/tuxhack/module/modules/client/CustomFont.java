@@ -5,7 +5,7 @@ package me.tux.tuxhack.module.modules.client;
 
         public class CustomFont extends Module {
         public CustomFont() {
-        super("CustomFont", Category.Client);
+        super("CustomFont", Category.CLIENT);
         }
 
         //CFontRenderer = new CFontRenderer(new Font())

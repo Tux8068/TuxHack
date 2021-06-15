@@ -16,7 +16,7 @@ import java.util.ArrayList;
 */
 
 public class ChatSuffix extends Module {
-    public ChatSuffix(){super("ChatSuffix", "Adds a suffix to the end of your message", Category.Chat);}
+    public ChatSuffix(){super("ChatSuffix", "Adds a suffix to the end of your message", Category.CHAT);}
     Setting.Mode Separator;
 
     Setting.Mode Mode;
@@ -37,7 +37,7 @@ public class ChatSuffix extends Module {
         Modes.add("tuxhack");
         Modes.add("T3xH3ck");
 
-        Mode = registerMode("Mode", "Mode", Modes, "TuxHack 1.4");
+        Mode = registerMode("Mode", "Mode", Modes, "TuxHack 1.5");
         return false;
     }
 
@@ -73,8 +73,8 @@ public class ChatSuffix extends Module {
             // seperators
             }
 
-            String Mode2 = "Vulcan";
-            if (Mode.getValue().equalsIgnoreCase("TuxHack 1.4")) {
+            String Mode2 = "TuxHack";
+            if (Mode.getValue().equalsIgnoreCase("TuxHack 1.5")) {
         Mode2 = "TuxHack 1.4";
 
             }

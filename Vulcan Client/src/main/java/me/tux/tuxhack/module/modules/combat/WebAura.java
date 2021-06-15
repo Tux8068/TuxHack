@@ -38,7 +38,7 @@ public class WebAura extends Module
     private int offsetStep;
 
     public WebAura() {
-        super("WebAura", Category.Combat);
+        super("WebAura", Category.COMBAT);
         this.offsetList = new Vec3d[] { new Vec3d(0.0, 1.0, 0.0), new Vec3d(0.0, 0.0, 0.0) };
         this.slowModeSwitch = false;
         this.playerHotbarSlot = -1;

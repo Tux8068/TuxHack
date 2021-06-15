@@ -14,7 +14,7 @@ import java.util.Comparator;
 
 public class OldFagDupe extends Module {
     public OldFagDupe() {
-        super("OldFagDupe", "allows you to dupe saddles on oldfag.org", Module.Category.Player);
+        super("OldFagDupe", "allows you to dupe saddles on oldfag.org", Module.Category.PLAYER);
     }
 
     public boolean setup() {

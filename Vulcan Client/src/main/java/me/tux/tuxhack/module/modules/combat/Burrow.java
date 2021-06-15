@@ -27,7 +27,7 @@ public class Burrow extends Module {
    private int oldSlot = -1;
 
    public Burrow() {
-      super("Burrow", "Glitches you into a block", Category.Combat);
+      super("Burrow", "Glitches you into a block", Category.COMBAT);
    }
 
    public boolean setup() {
